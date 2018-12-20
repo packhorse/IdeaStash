@@ -10,6 +10,10 @@ import UIKit
 
 class SearchScreenViewController: UIViewController {
     
+    var selectedIdeaTypeButton: UIButton?
+    var selectedCriteriaButtons: [UIButton] = []
+    var selectedPriceButton: UIButton?
+    var vcThemeColor: UIColor? = UIColor.lightGray
     
     //Button idea types
     @IBOutlet weak var ideaTypeButton1: UIButton!
@@ -44,7 +48,7 @@ class SearchScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        updateUI()
     }
     
     @IBAction func applyFiltersButtonTapped(_ sender: UIButton) {
@@ -56,94 +60,288 @@ class SearchScreenViewController: UIViewController {
     
     @IBAction func jobTypeButtonSelected(_ sender: UIButton) {
         
-        //        var jobType: JobType?
-        //
-        //        switch sender.restorationIdentifier {
-        //
-        //        case "contracting":
-        //            jobType = JobType.generalContracting
-        //            vcThemeColor = UIColor(named: Constants.coolOrange)
-        //        case "electrical":
-        //            jobType = JobType.electrical
-        //            vcThemeColor = UIColor(named: Constants.coolBlue)
-        //        case "handyman":
-        //            jobType = JobType.handyman
-        //            vcThemeColor = UIColor(named: Constants.urineYellow)
-        //        case "interiorDesign":
-        //            jobType = JobType.interiorDesign
-        //            vcThemeColor = UIColor(named: Constants.rudeRed)
-        //        case "homeRenno":
-        //            jobType = JobType.homeRenovation
-        //            vcThemeColor = UIColor(named: Constants.popsiclePurple)
-        //        case "landscaping":
-        //            jobType = JobType.landscaping
-        //            vcThemeColor = UIColor(named: Constants.grassyGreen)
-        //        default:
-        //            print("Something went wrong when searching")
-        //        }
-        //
-        //        if jobType != JobListingController.shared.jobTypeFilter {
-        //
-        //            // Updates the theme accross the entire view
-        //            turnOnButtonColor(sender)
-        //            updateVCThemeColor()
-        //
-        //            // Turn off the color on the previously selected button
-        //            turnOffButtonColor(selectedJobTypeButton)
-        //
-        //            // Make the sender/tapped button the new selected button
-        //            selectedJobTypeButton = sender
-        //            JobListingController.shared.jobTypeFilter = jobType
-        //        } else {
-        //
-        //            // Update model controller filters
-        //            JobListingController.shared.jobTypeFilter = nil
-        //
-        //            selectedJobTypeButton = nil
-        //            turnOffButtonColor(sender)
-        //            turnOffColorTheme()
+        var ideaType: IdeaType?
+        
+        switch sender.restorationIdentifier {
+            
+        case "alone":
+            ideaType = IdeaType.alone
+            vcThemeColor = UIColor(named: Constants.coolBlue)
+        case "family":
+            ideaType = IdeaType.family
+            vcThemeColor = UIColor(named: Constants.coolOrange)
+        case "friendsOrDate":
+            ideaType = IdeaType.friendsOrDate
+            vcThemeColor = UIColor(named: Constants.rudeRed)
+        default:
+            print("Something went wrong when searching")
+        }
+        
+        if ideaType != IdeaController.shared.ideaTypeFilter {
+            
+            turnOnButtonColor(sender)
+            updateVCThemeColor()
+            
+            turnOffButtonColor(selectedIdeaTypeButton)
+            
+            selectedIdeaTypeButton = sender
+            IdeaController.shared.ideaTypeFilter = ideaType
+        } else {
+            
+            IdeaController.shared.ideaTypeFilter = nil
+            
+            selectedIdeaTypeButton = nil
+            turnOffButtonColor(sender)
+            turnOffColorTheme()
+        }
+        
     }
     
     
     @IBAction func criteriaButtonTapped(_ sender: UIButton) {
         
-//        var criteria: JobCriteria?
-//        
-//        switch sender.restorationIdentifier {
-//        case "team":
-//            criteria = JobCriteria.fullTeam
-//        case "quality":
-//            criteria = JobCriteria.highQuality
-//        case "specalized":
-//            criteria = JobCriteria.specialized
-//        case "fast":
-//            criteria = JobCriteria.fast
-//        case "experienced":
-//            criteria = JobCriteria.experienced
-//        case "affordable":
-//            criteria = JobCriteria.affordable
-//        default:
-//            print("something went wrong")
-//        }
-//        
-//        guard let unwrappedCriteria = criteria else { return }
-//        
-//        if JobListingController.shared.jobCriteriaFilters.contains(unwrappedCriteria) {
-//            let index = JobListingController.shared.jobCriteriaFilters.firstIndex(of: unwrappedCriteria)
-//            JobListingController.shared.jobCriteriaFilters.remove(at: index!)
-//            selectedCriteriaButtons.remove(at: index!)
-//            turnOffButtonColor(sender)
-//        } else {
-//            if JobListingController.shared.jobCriteriaFilters.count == 3 {
-//                turnOffButtonColor(selectedCriteriaButtons[2])
-//                JobListingController.shared.jobCriteriaFilters.remove(at: 2)
-//                selectedCriteriaButtons.remove(at: 2)
-//            }
-//            JobListingController.shared.jobCriteriaFilters.append(unwrappedCriteria)
-//            selectedCriteriaButtons.append(sender)
-//            turnOnButtonColor(sender)
-//        }
+        var ideaCriteria: IdeaCriteria?
+        
+        switch sender.restorationIdentifier {
+        case "adventurous":
+            ideaCriteria = IdeaCriteria.adventurous
+        case "thrillful" :
+            ideaCriteria = IdeaCriteria.thrillful
+        case "hungry" :
+            ideaCriteria = IdeaCriteria.hungry
+        case "indoors" :
+            ideaCriteria = IdeaCriteria.indoors
+        case "outdoors" :
+            ideaCriteria = IdeaCriteria.outdoors
+        case "unique" :
+            ideaCriteria = IdeaCriteria.unique
+        case "scary" :
+            ideaCriteria = IdeaCriteria.scary
+        case "secret" :
+            ideaCriteria = IdeaCriteria.secret
+        case "romantic" :
+            ideaCriteria = IdeaCriteria.romantic
+        default: print("something went wront with sorting through your idea criteria")
+            
+        }
+        
+        guard let unwrappedCriteria = ideaCriteria else { return }
+        
+        if IdeaController.shared.ideaCriteriaFilters.contains(unwrappedCriteria) {
+            let index = IdeaController.shared.ideaCriteriaFilters.firstIndex(of: unwrappedCriteria)
+            IdeaController.shared.ideaCriteriaFilters.remove(at: index!)
+            selectedCriteriaButtons.remove(at: index!)
+                        turnOffButtonColor(sender)
+        } else {
+            if IdeaController.shared.ideaCriteriaFilters.count == 3 {
+                                turnOffButtonColor(selectedCriteriaButtons[2])
+                IdeaController.shared.ideaCriteriaFilters.remove(at: 2)
+                selectedCriteriaButtons.remove(at: 2)
+            }
+            IdeaController.shared.ideaCriteriaFilters.append(unwrappedCriteria)
+            selectedCriteriaButtons.append(sender)
+                        turnOnButtonColor(sender)
+        }
     }
+    
+    
+    @IBAction func priceButtonTapped(_ sender: UIButton) {
+        
+        
+        var ideaPrice: IdeaPrice?
+        
+        switch sender.restorationIdentifier {
+            
+        case "free" :
+            ideaPrice = IdeaPrice.free
+        case "$" :
+            ideaPrice = IdeaPrice.cheap
+        case "$$" :
+            ideaPrice = IdeaPrice.average
+        case "anyPrice" :
+            ideaPrice = IdeaPrice.any
+        default:
+            print("There was an issue with the price criteria")
+            
+        }
+        
+        if ideaPrice != IdeaController.shared.ideaPriceFilter {
+            
+            turnOnButtonColor(sender)
+            turnOffButtonColor(selectedPriceButton)
+            selectedPriceButton = sender
+            IdeaController.shared.ideaPriceFilter = ideaPrice
+            
+        } else {
+            
+           
+            turnOffButtonColor(sender)
+            IdeaController.shared.ideaPriceFilter = nil
+            
+            selectedPriceButton = nil
+            
+            
+            
+        }
+        
+        
+        
+    }
+    
+    
+    fileprivate func turnOnButtonColor(_ sender: UIButton) {
+        
+        // Updates the view for the button tapped by the User
+        sender.backgroundColor = vcThemeColor
+        sender.layer.shadowColor = vcThemeColor?.cgColor
+        sender.layer.shadowRadius = 4
+        sender.layer.shadowOpacity = 1
+        sender.layer.shadowOffset = CGSize(width: 0, height: 0)
+        sender.layer.borderColor = vcThemeColor?.cgColor
+        sender.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    fileprivate func turnOffButtonColor(_ button: UIButton?) {
+        
+        guard let button = button else { return }
+        // Restores the view for the button to its default
+        button.backgroundColor = UIColor.white
+        button.setTitleColor(UIColor.darkGray, for: .normal)
+        button.layer.shadowColor = UIColor.white.cgColor
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        
+        if button != selectedIdeaTypeButton {
+            
+            button.layer.borderColor = UIColor.lightGray.cgColor
+        }
+    }
+    
+    fileprivate func turnOffColorTheme() {
+        
+        vcThemeColor = UIColor.lightGray
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        _ = selectedCriteriaButtons.map({ turnOnButtonColor($0) })
+        applyFiltersButton.backgroundColor = vcThemeColor
+        applyFiltersButton.layer.shadowColor = vcThemeColor?.cgColor
+        applyFiltersButton.layer.borderColor = vcThemeColor?.cgColor
+        applyFiltersButton.layer.shadowOpacity = 2.0
+        applyFiltersButton.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    
+    fileprivate func updateVCThemeColor() {
+        self.navigationController?.navigationBar.barTintColor = vcThemeColor
+        _ = selectedCriteriaButtons.map({ turnOnButtonColor($0) })
+        applyFiltersButton.backgroundColor = vcThemeColor
+        applyFiltersButton.layer.shadowColor = vcThemeColor?.cgColor
+        applyFiltersButton.layer.borderColor = vcThemeColor?.cgColor
+        applyFiltersButton.layer.shadowOpacity = 2.0
+        applyFiltersButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        applyFiltersButton.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    func setupUIFor(_ button: UIButton) {
+        
+        button.layer.cornerRadius = 18.0
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+    }
+    
+    fileprivate func turnOnExistingIdeaTypeFilterButton() {
+        
+        if let ideaType = IdeaController.shared.ideaTypeFilter {
+            
+            let selectedButton: UIButton? = nil
+            
+            switch ideaType {
+            case .alone :
+                vcThemeColor = UIColor(named: Constants.coolBlue)
+            case .family :
+                vcThemeColor = UIColor(named: Constants.coolOrange)
+            case .friendsOrDate :
+                vcThemeColor = UIColor(named: Constants.rudeRed)
+            }
+            
+            selectedIdeaTypeButton = selectedButton
+            turnOnButtonColor(selectedButton!)
+            updateVCThemeColor()
+            
+        }
+    }
+    
+    
+    fileprivate func turnOnExistingCriteriaButtons() {
+        
+        for criteria in IdeaController.shared.ideaCriteriaFilters {
+            
+            let button: UIButton? = nil
+            
+            switch criteria {
+            case .adventurous:
+                selectedCriteriaButtons.append(criteriaButton1)
+            case .thrillful:
+                selectedCriteriaButtons.append(criteriaButton2)
+            case .hungry:
+                selectedCriteriaButtons.append(criteriaButton3)
+            case .indoors:
+                selectedCriteriaButtons.append(criteriaButton4)
+            case .outdoors:
+                selectedCriteriaButtons.append(criteriaButton5)
+            case .unique:
+                selectedCriteriaButtons.append(criteriaButton6)
+            case .scary:
+                selectedCriteriaButtons.append(criteriaButton7)
+            case .secret:
+                selectedCriteriaButtons.append(criteriaButton8)
+            case .romantic:
+                selectedCriteriaButtons.append(criteriaButton9)
+            }
+            turnOnButtonColor(button!)
+        }
+    }
+    
+    
+    
+    
+    func updateUI() {
+        
+        
+        // Setup Toggle Buttons
+        setupUIFor(ideaTypeButton1)
+        setupUIFor(ideaTypeButton2)
+        setupUIFor(ideaTypeButton3)
+
+        
+        setupUIFor(criteriaButton1)
+        setupUIFor(criteriaButton2)
+        setupUIFor(criteriaButton3)
+        setupUIFor(criteriaButton4)
+        setupUIFor(criteriaButton5)
+        setupUIFor(criteriaButton6)
+        setupUIFor(criteriaButton7)
+        setupUIFor(criteriaButton8)
+        setupUIFor(criteriaButton9)
+        
+        
+        setupUIFor(priceRangeButton1)
+        setupUIFor(priceRangeButton2)
+        setupUIFor(priceRangeButton3)
+        setupUIFor(priceRangeButton4)
+        
+        // Setup Apply Filters Button
+        applyFiltersButton.layer.cornerRadius = 21.0
+        applyFiltersButton.layer.borderWidth = 1.0
+        applyFiltersButton.layer.borderColor = UIColor.lightGray.cgColor
+        
+
+        
+        // Setup previously selected filter buttons in session, if any
+        turnOnExistingIdeaTypeFilterButton()
+        turnOnExistingCriteriaButtons()
+    }
+    
 }
 
 

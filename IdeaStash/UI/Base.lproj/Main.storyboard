@@ -168,8 +168,8 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ufE-rO-sKL">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ufE-rO-sKL">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
@@ -197,7 +197,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HC0-cC-Ruf">
-                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="fwk-9w-hBT">
                                     <size key="itemSize" width="158" height="234"/>
@@ -495,7 +495,7 @@
                                                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="criteriaButtonTapped:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="Too-rc-dRZ"/>
+                                                                    <action selector="priceButtonTapped:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="mTO-A8-tXg"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="$" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDO-LC-uby">
@@ -509,7 +509,7 @@
                                                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="criteriaButtonTapped:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="7Yd-ja-HN2"/>
+                                                                    <action selector="priceButtonTapped:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="LYh-nX-GgI"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="$$" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBM-Th-wIN">
@@ -523,10 +523,10 @@
                                                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="criteriaButtonTapped:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="LGW-AR-FvL"/>
+                                                                    <action selector="priceButtonTapped:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="zln-uu-J8l"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="any" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThE-Dy-H2h">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="anyPrice" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThE-Dy-H2h">
                                                                 <rect key="frame" x="226" y="0.0" width="64" height="36"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="36" id="kBT-WW-UnA"/>
@@ -537,7 +537,7 @@
                                                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="criteriaButtonTapped:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="GPd-tY-jQH"/>
+                                                                    <action selector="priceButtonTapped:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="ga2-Pk-i3G"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -612,7 +612,7 @@
                         <outlet property="criteriaButton5" destination="mhb-wY-kXx" id="JDH-in-k8H"/>
                         <outlet property="criteriaButton6" destination="VFW-GM-dcQ" id="nrE-4a-OOe"/>
                         <outlet property="criteriaButton7" destination="Dqt-qI-Hhl" id="bsv-ls-un9"/>
-                        <outlet property="criteriaButton8" destination="Dqt-qI-Hhl" id="e7K-Tn-Kyg"/>
+                        <outlet property="criteriaButton8" destination="a7c-aa-f6R" id="bbR-N3-zX2"/>
                         <outlet property="criteriaButton9" destination="Vee-IS-Pap" id="7t2-Ry-cjo"/>
                         <outlet property="ideaTypeButton1" destination="BsG-eP-U1t" id="l96-J8-b0y"/>
                         <outlet property="ideaTypeButton2" destination="tV5-cY-Y11" id="KHa-fv-Qaj"/>

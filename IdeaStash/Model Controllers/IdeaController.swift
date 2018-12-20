@@ -48,7 +48,7 @@ class IdeaController {
         }
     }
     
-    var maxBudgetFilter: Int = Constants.maxPaySliderAmount {
+    var ideaPriceFilter: IdeaPrice? = nil {
         didSet {
 //            sortIdeas()
         }
@@ -57,7 +57,7 @@ class IdeaController {
     
     func postIdea(with title: String, description: String,
                   ideaType: IdeaType, criteria: [IdeaCriteria],
-                  price: IdeaPrice, zipCode: String,
+                  price: IdeaPrice, zipCode: String, localOrUniversal: String,
                   completion: @escaping (Bool) -> Void) {
         
         guard let loggedInUser = UserController.shared.loggedInUser else {
@@ -69,7 +69,7 @@ class IdeaController {
         let username = loggedInUser.username
 
         
-        let idea = Idea(withTitle: title, description: description, ideaType: ideaType, criteria: criteria, price: price, zipCode: zipCode, username: username)
+        let idea = Idea(withTitle: title, description: description, ideaType: ideaType, criteria: criteria, price: price, zipCode: zipCode, username: username, localOrUniversal: localOrUniversal)
         
         FirebaseManager.postIdea(withIdea: idea) { (success) in
             if !success {
@@ -102,8 +102,8 @@ class IdeaController {
             completion(false)
         }
     }
- 
-//    func sortIdeas() {
+    
+//    func sortIdeas(){
 //
 //        var sortedIdeaPlaceholder = ideas.filter({$0.price <= maxBudgetFilter})
 //
@@ -121,4 +121,18 @@ class IdeaController {
 //    }
 //
 //
+    
+    func reportIdea(withIdeaID listingID: String, completion: @escaping (Bool) -> Void) {
+        
+        FirebaseManager.db.collection(Constants.reportedIdeaTypeKey).document(listingID).setData([:]) { (error) in
+            if let error = error {
+                print("Error: could not report the listing \n\(#function)\n\(error)\n\(error.localizedDescription)")
+                completion(false)
+                return
+            }
+            
+            completion(true)
+        }
+    }
+    
 }

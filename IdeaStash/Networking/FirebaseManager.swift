@@ -117,7 +117,7 @@ class FirebaseManager {
     static func postIdea(withIdea idea: Idea, completion: @escaping (Bool) -> Void) {
         
         db.collection(Constants.ideaKey).document(idea.listingID).setData(idea.getDocDate()) { (error) in if let error = error {
-            print("Error: unable to post the job listing doc to firestore \n\(#function)\n\(error)\n\(error.localizedDescription)")
+            print("Error: unable to post the idea doc to firestore \n\(#function)\n\(error)\n\(error.localizedDescription)")
             completion(false)
             return
             }

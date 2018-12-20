@@ -24,6 +24,7 @@ struct Constants {
     static let zipCodeKey = "zipCode"
     static let usernameKey = "username"
     static let timestampKey = "timestamp"
+    static let localOrUniversal = "localOrUniversal"
     static let listingIDKey = "listingID"
     
     //Used for the keys in firestore documents
@@ -38,6 +39,9 @@ struct Constants {
     static let myIdeasDidUpdateNotification = NSNotification.Name("myIdeasDidUpdateNotification")
     
     
+    static let coolBlue = "CoolBlue"
+    static let coolOrange = "CoolOrange"
+    static let rudeRed = "RudeRed"
     
     static let maxPaySliderAmount = 200
 }

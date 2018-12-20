@@ -129,10 +129,11 @@
             <connections>
                 <outlet property="MiddleWhiteViewSquared" destination="j12-H2-kl0" id="FhI-33-fo9"/>
                 <outlet property="customCellView" destination="6mX-9C-95C" id="b7U-WA-KA5"/>
-                <outlet property="descriptionLabel" destination="ETO-vs-zAD" id="Hfe-xN-gcJ"/>
-                <outlet property="hourlyPayLabel" destination="ITO-2E-CG5" id="rhK-Ex-ZQ9"/>
-                <outlet property="jobTitleLabel" destination="JK7-hp-nUy" id="3Iv-ZP-zuN"/>
-                <outlet property="posterNameLabel" destination="B1H-g3-cRu" id="BWe-mL-MdZ"/>
+                <outlet property="ideaDescriptionLabel" destination="ETO-vs-zAD" id="Hfe-xN-gcJ"/>
+                <outlet property="ideaTitleLabel" destination="JK7-hp-nUy" id="3Iv-ZP-zuN"/>
+                <outlet property="localOrUniversalLabel" destination="Xhg-ob-RsY" id="thD-RT-kDf"/>
+                <outlet property="posterIdeaType" destination="B1H-g3-cRu" id="BWe-mL-MdZ"/>
+                <outlet property="priceLabel" destination="ITO-2E-CG5" id="rhK-Ex-ZQ9"/>
                 <outlet property="roundedWhiteViewBottom" destination="gKL-nL-Lt2" id="URs-ri-ya0"/>
             </connections>
             <point key="canvasLocation" x="-92" y="-63.868065967016499"/>
