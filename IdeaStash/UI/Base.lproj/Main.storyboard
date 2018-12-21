@@ -219,7 +219,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" selectedImage="ContractorHouse" id="dSV-l9-64X"/>
                     <navigationItem key="navigationItem" title="Find Ideas" id="XZQ-4Z-eiD">
-                        <barButtonItem key="backBarButtonItem" title="Apply Filters" id="nj7-gj-Cl0"/>
+                        <barButtonItem key="backBarButtonItem" title="Ideas" id="nj7-gj-Cl0"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="F7Y-24-ech">
                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -279,7 +279,7 @@
                                                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="jobTypeButtonSelected:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="vtt-72-XhQ"/>
+                                                                    <action selector="ideaTypeButtonSelected:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="vtt-72-XhQ"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="family" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tV5-cY-Y11">
@@ -293,7 +293,7 @@
                                                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="jobTypeButtonSelected:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="dSo-yx-Kyk"/>
+                                                                    <action selector="ideaTypeButtonSelected:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="dSo-yx-Kyk"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -312,7 +312,7 @@
                                                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="jobTypeButtonSelected:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="Vxe-LD-3kc"/>
+                                                                    <action selector="ideaTypeButtonSelected:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="Vxe-LD-3kc"/>
                                                                     <action selector="jobTypeButtonTapped:" destination="kx1-YH-7Vd" eventType="touchUpInside" id="nlc-Ax-oYZ"/>
                                                                 </connections>
                                                             </button>
@@ -1467,4 +1467,5 @@
         <image name="FilterLines" width="75" height="75"/>
         <image name="UserForContractorApp" width="20" height="22"/>
     </resources>
+    <color key="tintColor" red="0.25431743179999999" green="0.25683542619999999" blue="0.25683542619999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -58,7 +58,7 @@ class SearchScreenViewController: UIViewController {
     
     
     
-    @IBAction func jobTypeButtonSelected(_ sender: UIButton) {
+    @IBAction func ideaTypeButtonSelected(_ sender: UIButton) {
         
         var ideaType: IdeaType?
         
@@ -174,18 +174,12 @@ class SearchScreenViewController: UIViewController {
             
         } else {
             
-           
             turnOffButtonColor(sender)
             IdeaController.shared.ideaPriceFilter = nil
             
             selectedPriceButton = nil
             
-            
-            
         }
-        
-        
-        
     }
     
     
@@ -220,7 +214,6 @@ class SearchScreenViewController: UIViewController {
         
         vcThemeColor = UIColor.lightGray
         
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
         _ = selectedCriteriaButtons.map({ turnOnButtonColor($0) })
         applyFiltersButton.backgroundColor = vcThemeColor
         applyFiltersButton.layer.shadowColor = vcThemeColor?.cgColor
@@ -231,7 +224,7 @@ class SearchScreenViewController: UIViewController {
     
     
     fileprivate func updateVCThemeColor() {
-        self.navigationController?.navigationBar.barTintColor = vcThemeColor
+        
         _ = selectedCriteriaButtons.map({ turnOnButtonColor($0) })
         applyFiltersButton.backgroundColor = vcThemeColor
         applyFiltersButton.layer.shadowColor = vcThemeColor?.cgColor
@@ -239,6 +232,9 @@ class SearchScreenViewController: UIViewController {
         applyFiltersButton.layer.shadowOpacity = 2.0
         applyFiltersButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         applyFiltersButton.setTitleColor(UIColor.white, for: .normal)
+        
+        guard let selectedPriceButton = selectedPriceButton else { return }
+        turnOnButtonColor(selectedPriceButton)
     }
     
     func setupUIFor(_ button: UIButton) {
@@ -253,21 +249,23 @@ class SearchScreenViewController: UIViewController {
         
         if let ideaType = IdeaController.shared.ideaTypeFilter {
             
-            let selectedButton: UIButton? = nil
+            var selectedButton: UIButton? = nil
             
             switch ideaType {
             case .alone :
                 vcThemeColor = UIColor(named: Constants.coolBlue)
+                selectedButton = ideaTypeButton1
             case .family :
                 vcThemeColor = UIColor(named: Constants.coolOrange)
+                selectedButton = ideaTypeButton2
             case .friendsOrDate :
                 vcThemeColor = UIColor(named: Constants.rudeRed)
+                selectedButton = ideaTypeButton3
             }
             
             selectedIdeaTypeButton = selectedButton
             turnOnButtonColor(selectedButton!)
             updateVCThemeColor()
-            
         }
     }
     
@@ -275,8 +273,6 @@ class SearchScreenViewController: UIViewController {
     fileprivate func turnOnExistingCriteriaButtons() {
         
         for criteria in IdeaController.shared.ideaCriteriaFilters {
-            
-            let button: UIButton? = nil
             
             switch criteria {
             case .adventurous:
@@ -298,10 +294,37 @@ class SearchScreenViewController: UIViewController {
             case .romantic:
                 selectedCriteriaButtons.append(criteriaButton9)
             }
-            turnOnButtonColor(button!)
+        }
+        
+        for button in selectedCriteriaButtons {
+            
+            turnOnButtonColor(button)
         }
     }
     
+    fileprivate func turnOnExistingPriceButton() {
+        
+        if let price = IdeaController.shared.ideaPriceFilter {
+            var selectedPriceButton: UIButton? = nil
+            
+            switch price {
+            case .free :
+                selectedPriceButton = priceRangeButton1
+            case .cheap :
+                selectedPriceButton = priceRangeButton2
+            case .average :
+                selectedPriceButton = priceRangeButton3
+            case .any :
+                selectedPriceButton = priceRangeButton4
+                
+            }
+            
+            turnOnButtonColor(selectedPriceButton!)
+         
+            
+            
+        }
+    }
     
     
     
@@ -336,10 +359,10 @@ class SearchScreenViewController: UIViewController {
         applyFiltersButton.layer.borderColor = UIColor.lightGray.cgColor
         
 
-        
         // Setup previously selected filter buttons in session, if any
         turnOnExistingIdeaTypeFilterButton()
         turnOnExistingCriteriaButtons()
+        turnOnExistingPriceButton()
     }
     
 }

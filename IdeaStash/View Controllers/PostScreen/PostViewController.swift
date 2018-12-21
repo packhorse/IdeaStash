@@ -9,9 +9,9 @@
 import UIKit
 
 class PostViewController: UIViewController {
-
+    
     var attemptedPost = false
-
+    
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleTextField: UITextField!
@@ -43,129 +43,144 @@ class PostViewController: UIViewController {
     //Post button outlet
     @IBOutlet weak var postButton: UIButton!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+updateUI()
+        
+        self.hideKeyboardWhenTappedAround()
+//        descriptionTextView.delegate = self
+        
+        
     }
     
-
+    
     @IBAction func jobTypeButtonTapped(_ sender: UIButton) {
         
-//        var jobType: JobType?
-//
-//        switch sender.restorationIdentifier {
-//        case "contracting":
-//            jobType = JobType.generalContracting
-//            vcThemeColor = UIColor(named: Constants.coolOrange)
-//        case "electrical":
-//            jobType = JobType.electrical
-//            vcThemeColor = UIColor(named: Constants.coolBlue)
-//        case "handyman":
-//            jobType = JobType.handyman
-//            vcThemeColor = UIColor(named: Constants.urineYellow)
-//        case "interiorDesign":
-//            jobType = JobType.interiorDesign
-//            vcThemeColor = UIColor(named: Constants.rudeRed)
-//        case "homeRenno":
-//            jobType = JobType.homeRenovation
-//            vcThemeColor = UIColor(named: Constants.popsiclePurple)
-//        case "landscaping":
-//            jobType = JobType.landscaping
-//            vcThemeColor = UIColor(named: Constants.grassyGreen)
-//        default:
-//            print("Something went wrong!")
-//        }
-//
-//        if jobType != selectedJobType {
-//
-//            // Updates the theme accross the entire view
-//            turnOnButtonColor(sender)
-//            updateVCThemeColor()
-//
-//            // Turn off the color on the previously selected button
-//            turnOffButtonColor(selectedJobTypeButton)
-//
-//            // Make the sender/tapped button the new selected button
-//            selectedJobTypeButton = sender
-//            selectedJobType = jobType
-//        }
     }
     
     
     @IBAction func criteriaButtonTapped(_ sender: UIButton) {
         
-//        var criteria: JobCriteria?
-//
-//        switch sender.restorationIdentifier {
-//        case "team":
-//            criteria = JobCriteria.fullTeam
-//        case "quality":
-//            criteria = JobCriteria.highQuality
-//        case "specalized":
-//            criteria = JobCriteria.specialized
-//        case "fast":
-//            criteria = JobCriteria.fast
-//        case "experienced":
-//            criteria = JobCriteria.experienced
-//        case "affordable":
-//            criteria = JobCriteria.affordable
-//
-//        default:
-//            print("something went wrong")
-//        }
-//
-//        guard let unwrappedCriteria = criteria else { return }
-//        if selectedCriterias.contains(unwrappedCriteria) {
-//            let index = selectedCriterias.firstIndex(of: unwrappedCriteria)
-//            selectedCriterias.remove(at: index!)
-//            selectedCriteriaButtons.remove(at: index!)
-//            turnOffButtonColor(sender)
-//        } else {
-//            // If three types are selected, remove the last one and replace it with the new selection
-//            if selectedCriterias.count == 3 {
-//                turnOffButtonColor(selectedCriteriaButtons[2])
-//                selectedCriterias.remove(at: 2)
-//                selectedCriteriaButtons.remove(at: 2)
-//            }
-//            selectedCriterias.append(unwrappedCriteria)
-//            selectedCriteriaButtons.append(sender)
-//            turnOnButtonColor(sender)
-//        }
     }
     
     
     @IBAction func postButtonTapped(_ sender: UIButton) {
-//        
-//        guard let title = titleTextField.text, !title.isEmpty,
-//            let description = descriptionTextView.text, !description.isEmpty,
-//            let jobType = selectedJobType,
-//            selectedCriterias.count == 3
-//            else { print("Missing info") ; return  }
-//        
-//        let hourlyPay = Int(paySlider.value)
-//        let zipCode = "84041"
-//        
-//        if (UserController.shared.loggedInUser != nil) {
-//            JobListingController.shared.postJobListing(withTitle: title, description: description, jobType: jobType,
-//                                                       criteria: selectedCriterias, hourlyPay: hourlyPay,
-//                                                       zipCode: zipCode) { (success) in
-//                                                        if success {
-//                                                            
-//                                                            self.tabBarController?.selectedIndex = 2
-//                                                            self.resetVC()
-//                                                        } else {
-//                                                            print("WompWompWompppp...")
-//                                                        }
-//            }
-//        } else {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let signUpVC = storyboard.instantiateViewController(withIdentifier: "signInVC") as! LogInViewController
-//            signUpVC.themeColor = vcThemeColor
-//            self.present(signUpVC, animated: true, completion: nil)
-//            attemptedPost = true
-//        }
+        
+        
+        
+        
+    }
+    
+    fileprivate func updateUI() {
+        
+        // Title Text Field
+        titleTextField.layer.cornerRadius = 21.0
+        titleTextField.layer.borderWidth = 1.0
+        titleTextField.layer.borderColor = UIColor.lightGray.cgColor
+        titleTextField.setLeftPaddingPoints(15)
+        
+        // Description Text View
+        descriptionTextView.layer.cornerRadius = 18.0
+        descriptionTextView.layer.borderWidth = 1.0
+        descriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
+        descriptionTextView.textContainerInset = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 5)
+        
+        // Buttons
+        jobTypeButton1.layer.cornerRadius = 18.0
+        jobTypeButton1.layer.borderWidth = 1.0
+        jobTypeButton1.layer.borderColor = UIColor.lightGray.cgColor
+        jobTypeButton1.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        jobTypeButton2.layer.cornerRadius = 18.0
+        jobTypeButton2.layer.borderWidth = 1.0
+        jobTypeButton2.layer.borderColor = UIColor.lightGray.cgColor
+        jobTypeButton2.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        jobTypeButton3.layer.cornerRadius = 18.0
+        jobTypeButton3.layer.borderWidth = 1.0
+        jobTypeButton3.layer.borderColor = UIColor.lightGray.cgColor
+        jobTypeButton3.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton1.layer.cornerRadius = 18.0
+        criteriaButton1.layer.borderWidth = 1.0
+        criteriaButton1.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton1.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton2.layer.cornerRadius = 18.0
+        criteriaButton2.layer.borderWidth = 1.0
+        criteriaButton2.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton2.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton3.layer.cornerRadius = 18.0
+        criteriaButton3.layer.borderWidth = 1.0
+        criteriaButton3.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton3.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton4.layer.cornerRadius = 18.0
+        criteriaButton4.layer.borderWidth = 1.0
+        criteriaButton4.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton4.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton5.layer.cornerRadius = 18.0
+        criteriaButton5.layer.borderWidth = 1.0
+        criteriaButton5.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton5.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton6.layer.cornerRadius = 18.0
+        criteriaButton6.layer.borderWidth = 1.0
+        criteriaButton6.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton6.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        
+        criteriaButton7.layer.cornerRadius = 18.0
+        criteriaButton7.layer.borderWidth = 1.0
+        criteriaButton7.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton7.titleLabel?.adjustsFontSizeToFitWidth = true
+
+        
+        criteriaButton8.layer.cornerRadius = 18.0
+        criteriaButton8.layer.borderWidth = 1.0
+        criteriaButton8.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton8.titleLabel?.adjustsFontSizeToFitWidth = true
+
+        
+        criteriaButton9.layer.cornerRadius = 18.0
+        criteriaButton9.layer.borderWidth = 1.0
+        criteriaButton9.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton9.titleLabel?.adjustsFontSizeToFitWidth = true
+
+        
+        priceButton1.layer.cornerRadius = 18.0
+        priceButton1.layer.borderWidth = 1.0
+        priceButton1.layer.borderColor = UIColor.lightGray.cgColor
+        priceButton1.titleLabel?.adjustsFontSizeToFitWidth = true
+
+        
+        priceButton2.layer.cornerRadius = 18.0
+        priceButton2.layer.borderWidth = 1.0
+        priceButton2.layer.borderColor = UIColor.lightGray.cgColor
+        priceButton2.titleLabel?.adjustsFontSizeToFitWidth = true
+
+        
+        priceButton3.layer.cornerRadius = 18.0
+        priceButton3.layer.borderWidth = 1.0
+        priceButton3.layer.borderColor = UIColor.lightGray.cgColor
+        priceButton3.titleLabel?.adjustsFontSizeToFitWidth = true
+
+        
+        priceButton4.layer.cornerRadius = 18.0
+        priceButton4.layer.borderWidth = 1.0
+        priceButton4.layer.borderColor = UIColor.lightGray.cgColor
+        priceButton4.titleLabel?.adjustsFontSizeToFitWidth = true
+
+        
+        
+        // Post Button
+        postButton.layer.cornerRadius = 24.0
+        postButton.layer.borderWidth = 1.0
+        postButton.layer.borderColor = UIColor.lightGray.cgColor
     }
 
 }
