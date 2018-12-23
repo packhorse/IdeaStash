@@ -152,13 +152,13 @@ class SearchScreenViewController: UIViewController {
         
         switch sender.restorationIdentifier {
             
-        case "free" :
+        case "Free" :
             ideaPrice = IdeaPrice.free
         case "$" :
             ideaPrice = IdeaPrice.cheap
         case "$$" :
             ideaPrice = IdeaPrice.average
-        case "anyPrice" :
+        case "Any" :
             ideaPrice = IdeaPrice.any
         default:
             print("There was an issue with the price criteria")

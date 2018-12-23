@@ -13,14 +13,27 @@ class PostViewController: UIViewController {
     var attemptedPost = false
     
     
+    //These are the varialbes that change based on the4 selection=by the user.
+    var selectedIdeaType: IdeaType?
+    var selectedIdeaTypeButton: UIButton?
+    var vcThemeColor: UIColor? = UIColor.lightGray
+    
+    var selectedIdeaCriterias: [IdeaCriteria] = []
+    var selectedIdeaCriteriaButton: [UIButton] = []
+    
+    var selectedIdeaPrice: IdeaPrice?
+    var selectedIdeaPriceButton: UIButton?
+    
+    
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     
     //Idea Criteria Buttons
-    @IBOutlet weak var jobTypeButton1: UIButton!
-    @IBOutlet weak var jobTypeButton2: UIButton!
-    @IBOutlet weak var jobTypeButton3: UIButton!
+    @IBOutlet weak var ideaTypeButton1: UIButton!
+    @IBOutlet weak var ideaTypeButton2: UIButton!
+    @IBOutlet weak var ideaTypeButton3: UIButton!
     
     //Idea words that describe each idea.
     @IBOutlet weak var criteriaButton1: UIButton!
@@ -47,22 +60,136 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-updateUI()
+        updateUI()
         
         self.hideKeyboardWhenTappedAround()
-//        descriptionTextView.delegate = self
+        
+        titleTextField.delegate = self
+        descriptionTextView.delegate = self
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: UIWindow.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIWindow.keyboardWillHideNotification, object: nil)
         
         
     }
     
     
-    @IBAction func jobTypeButtonTapped(_ sender: UIButton) {
+    @IBAction func ideaTypeButtonTapped(_ sender: UIButton) {
+        
+        var ideaType: IdeaType?
+        
+        switch sender.restorationIdentifier {
+            
+        case "Alone":
+            ideaType = IdeaType.alone
+            vcThemeColor = UIColor(named: Constants.coolBlue)
+        case "Family":
+            ideaType = IdeaType.family
+            vcThemeColor = UIColor(named: Constants.coolOrange)
+        case "FriendsOrDates":
+            ideaType = IdeaType.friendsOrDate
+            vcThemeColor = UIColor(named: Constants.rudeRed)
+        default:
+            print("Something went wrong when posting")
+        }
+        
+        if ideaType != selectedIdeaType {
+            
+            turnOnButtonColor(sender)
+            updateVCThemeColor()
+            
+            turnOffButtonColor(selectedIdeaTypeButton)
+            
+            selectedIdeaTypeButton = sender
+            selectedIdeaType = ideaType
+        }
         
     }
     
     
     @IBAction func criteriaButtonTapped(_ sender: UIButton) {
         
+        var ideaCriteria: IdeaCriteria?
+        
+        switch sender.restorationIdentifier {
+        case "adventurous":
+            ideaCriteria = IdeaCriteria.adventurous
+        case "thrillful" :
+            ideaCriteria = IdeaCriteria.thrillful
+        case "food" :
+            ideaCriteria = IdeaCriteria.hungry
+        case "indoors" :
+            ideaCriteria = IdeaCriteria.indoors
+        case "outdoors" :
+            ideaCriteria = IdeaCriteria.outdoors
+        case "unique" :
+            ideaCriteria = IdeaCriteria.unique
+        case "scary" :
+            ideaCriteria = IdeaCriteria.scary
+        case "secret" :
+            ideaCriteria = IdeaCriteria.secret
+        case "romantic" :
+            ideaCriteria = IdeaCriteria.romantic
+        default: print("something went wront with sorting through your idea criteria")
+            
+        }
+        
+        guard let unwrappedCriteria = ideaCriteria else { return }
+        if selectedIdeaCriterias.contains(unwrappedCriteria) {
+            let index = selectedIdeaCriterias.firstIndex(of: unwrappedCriteria)
+            selectedIdeaCriterias.remove(at: index!)
+            selectedIdeaCriteriaButton.remove(at: index!)
+            turnOffButtonColor(sender)
+        } else {
+            
+            if selectedIdeaCriterias.count == 3 {
+                turnOffButtonColor(selectedIdeaCriteriaButton[2])
+                selectedIdeaCriterias.remove(at: 2)
+                selectedIdeaCriteriaButton.remove(at: 2)
+            }
+            selectedIdeaCriterias.append(unwrappedCriteria)
+            selectedIdeaCriteriaButton.append(sender)
+            turnOnButtonColor(sender)
+        }
+        
+    }
+    
+    
+    @IBAction func priceButtonTapped(_ sender: UIButton) {
+        
+        var ideaPrice: IdeaPrice?
+        
+        switch sender.restorationIdentifier {
+            
+        case "Free" :
+            ideaPrice = IdeaPrice.free
+        case "$" :
+            ideaPrice = IdeaPrice.cheap
+        case "$$" :
+            ideaPrice = IdeaPrice.average
+        case "Any" :
+            ideaPrice = IdeaPrice.any
+        default:
+            print("There was an issue with the price criteria")
+            
+        }
+        
+        if ideaPrice != IdeaController.shared.ideaPriceFilter {
+            
+            turnOnButtonColor(sender)
+            turnOffButtonColor(selectedIdeaPriceButton)
+            selectedIdeaPriceButton = sender
+            IdeaController.shared.ideaPriceFilter = ideaPrice
+            
+        } else {
+            
+            turnOffButtonColor(sender)
+            IdeaController.shared.ideaPriceFilter = nil
+            
+            selectedIdeaPriceButton = nil
+            
+        }
     }
     
     
@@ -72,6 +199,51 @@ updateUI()
         
         
     }
+    
+    fileprivate func turnOnButtonColor(_ sender: UIButton) {
+        
+        // Updates the view for the button tapped by the User
+        sender.backgroundColor = vcThemeColor
+        sender.layer.shadowColor = vcThemeColor?.cgColor
+        sender.layer.shadowRadius = 4
+        sender.layer.shadowOpacity = 1
+        sender.layer.shadowOffset = CGSize(width: 0, height: 0)
+        sender.layer.borderColor = vcThemeColor?.cgColor
+        sender.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    
+    fileprivate func turnOffButtonColor(_ button: UIButton?) {
+        
+        guard let button = button else { return }
+        // Restores the view for the button to its default
+        button.backgroundColor = UIColor.white
+        button.setTitleColor(UIColor.darkGray, for: .normal)
+        button.layer.shadowColor = UIColor.white.cgColor
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        
+        if button != selectedIdeaTypeButton {
+            
+            button.layer.borderColor = UIColor.lightGray.cgColor
+        }
+    }
+    
+    fileprivate func updateVCThemeColor() {
+        
+        _ = selectedIdeaCriteriaButton.map({ turnOnButtonColor($0) })
+        _ = selectedIdeaPriceButton.map({ turnOnButtonColor($0) })
+        postButton.backgroundColor = vcThemeColor
+        postButton.layer.shadowColor = vcThemeColor?.cgColor
+        postButton.layer.borderColor = vcThemeColor?.cgColor
+        postButton.layer.shadowOpacity = 2.0
+        postButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        postButton.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    
+    
+    
+    
     
     fileprivate func updateUI() {
         
@@ -88,20 +260,20 @@ updateUI()
         descriptionTextView.textContainerInset = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 5)
         
         // Buttons
-        jobTypeButton1.layer.cornerRadius = 18.0
-        jobTypeButton1.layer.borderWidth = 1.0
-        jobTypeButton1.layer.borderColor = UIColor.lightGray.cgColor
-        jobTypeButton1.titleLabel?.adjustsFontSizeToFitWidth = true
+        ideaTypeButton1.layer.cornerRadius = 18.0
+        ideaTypeButton1.layer.borderWidth = 1.0
+        ideaTypeButton1.layer.borderColor = UIColor.lightGray.cgColor
+        ideaTypeButton1.titleLabel?.adjustsFontSizeToFitWidth = true
         
-        jobTypeButton2.layer.cornerRadius = 18.0
-        jobTypeButton2.layer.borderWidth = 1.0
-        jobTypeButton2.layer.borderColor = UIColor.lightGray.cgColor
-        jobTypeButton2.titleLabel?.adjustsFontSizeToFitWidth = true
+        ideaTypeButton2.layer.cornerRadius = 18.0
+        ideaTypeButton2.layer.borderWidth = 1.0
+        ideaTypeButton2.layer.borderColor = UIColor.lightGray.cgColor
+        ideaTypeButton2.titleLabel?.adjustsFontSizeToFitWidth = true
         
-        jobTypeButton3.layer.cornerRadius = 18.0
-        jobTypeButton3.layer.borderWidth = 1.0
-        jobTypeButton3.layer.borderColor = UIColor.lightGray.cgColor
-        jobTypeButton3.titleLabel?.adjustsFontSizeToFitWidth = true
+        ideaTypeButton3.layer.cornerRadius = 18.0
+        ideaTypeButton3.layer.borderWidth = 1.0
+        ideaTypeButton3.layer.borderColor = UIColor.lightGray.cgColor
+        ideaTypeButton3.titleLabel?.adjustsFontSizeToFitWidth = true
         
         criteriaButton1.layer.cornerRadius = 18.0
         criteriaButton1.layer.borderWidth = 1.0
@@ -138,43 +310,43 @@ updateUI()
         criteriaButton7.layer.borderWidth = 1.0
         criteriaButton7.layer.borderColor = UIColor.lightGray.cgColor
         criteriaButton7.titleLabel?.adjustsFontSizeToFitWidth = true
-
+        
         
         criteriaButton8.layer.cornerRadius = 18.0
         criteriaButton8.layer.borderWidth = 1.0
         criteriaButton8.layer.borderColor = UIColor.lightGray.cgColor
         criteriaButton8.titleLabel?.adjustsFontSizeToFitWidth = true
-
+        
         
         criteriaButton9.layer.cornerRadius = 18.0
         criteriaButton9.layer.borderWidth = 1.0
         criteriaButton9.layer.borderColor = UIColor.lightGray.cgColor
         criteriaButton9.titleLabel?.adjustsFontSizeToFitWidth = true
-
+        
         
         priceButton1.layer.cornerRadius = 18.0
         priceButton1.layer.borderWidth = 1.0
         priceButton1.layer.borderColor = UIColor.lightGray.cgColor
         priceButton1.titleLabel?.adjustsFontSizeToFitWidth = true
-
+        
         
         priceButton2.layer.cornerRadius = 18.0
         priceButton2.layer.borderWidth = 1.0
         priceButton2.layer.borderColor = UIColor.lightGray.cgColor
         priceButton2.titleLabel?.adjustsFontSizeToFitWidth = true
-
+        
         
         priceButton3.layer.cornerRadius = 18.0
         priceButton3.layer.borderWidth = 1.0
         priceButton3.layer.borderColor = UIColor.lightGray.cgColor
         priceButton3.titleLabel?.adjustsFontSizeToFitWidth = true
-
+        
         
         priceButton4.layer.cornerRadius = 18.0
         priceButton4.layer.borderWidth = 1.0
         priceButton4.layer.borderColor = UIColor.lightGray.cgColor
         priceButton4.titleLabel?.adjustsFontSizeToFitWidth = true
-
+        
         
         
         // Post Button
@@ -182,7 +354,95 @@ updateUI()
         postButton.layer.borderWidth = 1.0
         postButton.layer.borderColor = UIColor.lightGray.cgColor
     }
+    
+    fileprivate func resetVC() {
+        
+        //        vcThemeColor = UIColor.lightGray
+        ////        turnOffButtonColor(selectedIdeaTypeButton)
+        ////        updateVCThemeColor()
+        //        navigationController?.navigationBar.barTintColor = UIColor.white
+        ////        let _ = selectedIdeaCriteriaButton.map({ turnOffButtonColor($0) })
+        //
+        //        selectedIdeaType = nil
+        //        selectedIdeaTypeButton = nil
+        //
+        //        selectedIdeaCriterias = []
+        //        selectedIdeaCriteriaButton = []
+        //
+        //        selectedIdeaPrice = nil
+        //        selectedIdeaPriceButton = nil
+        //
+        //        titleTextField.text = ""
+        //        descriptionTextView.text = ""
+        //
+        //        scrollView.contentOffset = CGPoint(x: 0, y: 0)
+    }
+    
+}
 
+
+///////////////////////////////
+extension PostViewController: UITextFieldDelegate, UITextViewDelegate {
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        self.descriptionTextView.becomeFirstResponder()
+        
+        return true
+    }
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        
+        let scrollToPoint = Int(descriptionTextView.frame.minY) - 50
+        
+        UIView.animate(withDuration: 0.1) {
+            
+            self.scrollView.contentOffset = CGPoint(x: 0, y: scrollToPoint)
+        }
+        
+        return true
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if text == "\n" {
+            descriptionTextView.resignFirstResponder()
+            return false
+        }
+        
+        return true
+    }
+    
+    @objc func keyboardDidShow(notification: NSNotification) {
+        
+        var info = notification.userInfo!
+        let keyBoardSize = info[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        scrollView.contentInset.bottom = keyBoardSize.height
+        scrollView.scrollIndicatorInsets.bottom = keyBoardSize.height
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        
+        UIView.animate(withDuration: 0.25) {
+            self.scrollView.contentInset.bottom = 0
+            self.scrollView.scrollIndicatorInsets.bottom = 0
+        }
+    }
+}
+
+
+extension UIViewController {
+    
+    @objc func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
 }
 
 extension UITextField {

@@ -496,6 +496,7 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="priceButtonTapped:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="mTO-A8-tXg"/>
+                                                                    <action selector="priceButtonTapped:" destination="kx1-YH-7Vd" eventType="touchUpInside" id="yet-sT-grR"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="$" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDO-LC-uby">
@@ -697,7 +698,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="adH-2I-8Xr">
                                                         <rect key="frame" x="0.0" y="0.0" width="346" height="36"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="handyman" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mja-Dd-tZb">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Alone" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mja-Dd-tZb">
                                                                 <rect key="frame" x="0.0" y="0.0" width="165.5" height="36"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="36" id="dwE-HJ-H87"/>
@@ -707,10 +708,10 @@
                                                                     <color key="titleColor" red="0.33687958499999998" green="0.34021502640000001" blue="0.34021502640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="jobTypeButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="ecK-Qy-EpB"/>
+                                                                    <action selector="ideaTypeButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="ecK-Qy-EpB"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="contracting" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gc-ke-3yZ">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Family" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gc-ke-3yZ">
                                                                 <rect key="frame" x="180.5" y="0.0" width="165.5" height="36"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="36" id="N7A-lO-mxd"/>
@@ -720,7 +721,7 @@
                                                                     <color key="titleColor" red="0.33687958499999998" green="0.34021502640000001" blue="0.34021502640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="jobTypeButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="hXn-a6-r4r"/>
+                                                                    <action selector="ideaTypeButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="hXn-a6-r4r"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -728,7 +729,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4Z2-bt-LfA">
                                                         <rect key="frame" x="0.0" y="52" width="346" height="36"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="homeRenno" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u8-Hs-Jst">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="FriendsOrDates" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u8-Hs-Jst">
                                                                 <rect key="frame" x="0.0" y="0.0" width="346" height="36"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="36" id="7yk-dJ-9N4"/>
@@ -739,7 +740,7 @@
                                                                     <color key="titleColor" red="0.33687958499999998" green="0.34021502640000001" blue="0.34021502640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="jobTypeButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="bl8-Yj-jGN"/>
+                                                                    <action selector="ideaTypeButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="bl8-Yj-jGN"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -758,7 +759,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zB3-4o-Mfn">
                                                         <rect key="frame" x="0.0" y="52.5" width="346" height="36"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="free" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M94-9a-gGM">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Free" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M94-9a-gGM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="75.5" height="36"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="36" id="95A-OP-1wR"/>
@@ -769,6 +770,7 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="criteriaButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="piW-yl-684"/>
+                                                                    <action selector="priceButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="pwg-jY-Z9k"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="$" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tf-le-dSU">
@@ -782,6 +784,7 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="criteriaButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="1Xf-Og-pch"/>
+                                                                    <action selector="priceButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="KlB-V0-9wv"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="$$" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0v-eC-CHJ">
@@ -795,9 +798,10 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="criteriaButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="8eo-1Q-xM6"/>
+                                                                    <action selector="priceButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="b7l-Ej-PM3"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="any" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThF-be-FQP">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Any" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThF-be-FQP">
                                                                 <rect key="frame" x="271" y="0.0" width="75" height="36"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="36" id="ti9-zk-X8W"/>
@@ -808,6 +812,7 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="criteriaButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="XlY-La-1dx"/>
+                                                                    <action selector="priceButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="OhE-cj-2F1"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -1049,9 +1054,9 @@
                         <outlet property="criteriaButton8" destination="JPr-AX-GcU" id="G3r-Vk-KGv"/>
                         <outlet property="criteriaButton9" destination="bFT-1c-nh7" id="V82-fr-DYf"/>
                         <outlet property="descriptionTextView" destination="4Cd-AC-8Hl" id="uRU-5T-hMW"/>
-                        <outlet property="jobTypeButton1" destination="mja-Dd-tZb" id="p1g-sR-V3P"/>
-                        <outlet property="jobTypeButton2" destination="7gc-ke-3yZ" id="wWp-Vh-Jbx"/>
-                        <outlet property="jobTypeButton3" destination="5u8-Hs-Jst" id="dVw-Fb-Qsq"/>
+                        <outlet property="ideaTypeButton1" destination="mja-Dd-tZb" id="p1g-sR-V3P"/>
+                        <outlet property="ideaTypeButton2" destination="7gc-ke-3yZ" id="wWp-Vh-Jbx"/>
+                        <outlet property="ideaTypeButton3" destination="5u8-Hs-Jst" id="dVw-Fb-Qsq"/>
                         <outlet property="postButton" destination="Djm-vp-rlx" id="5d5-AO-59d"/>
                         <outlet property="priceButton1" destination="M94-9a-gGM" id="fjL-ka-Ifl"/>
                         <outlet property="priceButton2" destination="4tf-le-dSU" id="pen-RL-YVL"/>
