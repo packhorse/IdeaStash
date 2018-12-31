@@ -31,7 +31,7 @@ class ListingCollectionViewCell: UICollectionViewCell {
         ideaTitleLabel.text = idea.title
         ideaDescriptionLabel.text = idea.description
         priceLabel.text = idea.price.rawValue
-        localOrUniversalLabel.text = idea.localOrUniversal
+//        localOrUniversalLabel.text = idea.localOrUniversal.rawValue
         
     }
     

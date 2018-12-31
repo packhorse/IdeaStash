@@ -57,7 +57,7 @@ class IdeaController {
     
     func postIdea(with title: String, description: String,
                   ideaType: IdeaType, criteria: [IdeaCriteria],
-                  price: IdeaPrice, zipCode: String, localOrUniversal: String,
+                  price: IdeaPrice, zipCode: String, /*localOrUniversal: LocalOrUniversal,*/
                   completion: @escaping (Bool) -> Void) {
         
         guard let loggedInUser = UserController.shared.loggedInUser else {
@@ -69,7 +69,7 @@ class IdeaController {
         let username = loggedInUser.username
 
         
-        let idea = Idea(withTitle: title, description: description, ideaType: ideaType, criteria: criteria, price: price, zipCode: zipCode, username: username, localOrUniversal: localOrUniversal)
+        let idea = Idea(withTitle: title, description: description, ideaType: ideaType, criteria: criteria, price: price, zipCode: zipCode, username: username /*localOrUniversal: localOrUniversal*/)
         
         FirebaseManager.postIdea(withIdea: idea) { (success) in
             if !success {
@@ -103,24 +103,29 @@ class IdeaController {
         }
     }
     
-//    func sortIdeas(){
-//
-//        var sortedIdeaPlaceholder = ideas.filter({$0.price <= maxBudgetFilter})
-//
-//        sortedIdeas = sortedIdeaPlaceholder
-//
-//        if jobCriteriaFilters.count > 0 {
-//            sortedIdeaPlaceholder
-//        }
-//    }
-//
-//
-//    func getMyIdeas() {
-//
-//        guard let currentUsername = UserControll
-//    }
-//
-//
+    func sortIdeas(){
+
+
+        if ideaCriteriaFilters.count > 0 {
+            
+            
+            
+            }
+        }
+    
+
+
+    func getMyIdeas() {
+
+        guard let currentUsername = UserController.shared.loggedInUser?.username else {
+            myIdeas = []
+            return
+        }
+        
+        myIdeas = ideas.filter { $0.username == currentUsername}
+    }
+
+
     
     func reportIdea(withIdeaID listingID: String, completion: @escaping (Bool) -> Void) {
         

@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-
+class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userBioLabel: UILabel!
@@ -19,24 +20,113 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateViews), name: Constants.myIdeasDidUpdateNotification, object: nil)
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        let collectionViewNib = UINib(nibName: "ListingCollectionViewCell", bundle: nil)
+        
+        collectionView.register(collectionViewNib, forCellWithReuseIdentifier: "listingCell")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        UIChanges()
+    }
+    
     
     @IBAction func settingsButtonTapped(_ sender: UIBarButtonItem) {
         
-//        presentActionSheet()
+        presentActionSheet()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func updateViews() {
+        
+        collectionView.reloadData()
     }
-    */
-
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return IdeaController.shared.myIdeas.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "listingCell", for: indexPath) as? ListingCollectionViewCell else { return UICollectionViewCell() }
+        
+        let idea = IdeaController.shared.myIdeas[indexPath.row]
+        
+        cell.idea = idea
+        
+        return cell
+        
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let widthOfScreen = view.frame.width
+        return CGSize(width: (widthOfScreen - 3 * 16) / 2 + 10, height: ((widthOfScreen - 3 * 16) / 2) + 50)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 16, left: 10, bottom: 50, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        var idea: Idea? = nil
+        
+        idea = IdeaController.shared.myIdeas[indexPath.row]
+        
+        let detailVC = ListingDetailViewController()
+        
+        detailVC.idea = idea
+        present(detailVC, animated: true, completion: nil)
+    }
+    
+    func UIChanges() {
+        
+        guard let currentUser = UserController.shared.loggedInUser else { return }
+        
+        nameLabel.text = "\(currentUser.username)"
+        userBioLabel.text = currentUser.bio
+        numberOfListingsLabel.text = String(IdeaController.shared.myIdeas.count)
+        
+    }
+    
+    
+    
+    fileprivate func logoutUser() {
+        
+        UserController.shared.logoutUser { (successfulLogout) in
+            if successfulLogout {
+                self.tabBarController?.selectedIndex = 0
+            }
+        }
+    }
+    
+    
+    
+    func presentActionSheet() {
+        
+        let actionSheetVC = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let logout = UIAlertAction(title: "Logout", style: .destructive) { (_) in
+            self.logoutUser()
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        actionSheetVC.addAction(logout)
+        actionSheetVC.addAction(cancel)
+        
+        present(actionSheetVC, animated: true, completion: nil)
+    }
+    
 }
+

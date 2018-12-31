@@ -22,6 +22,7 @@ class PostViewController: UIViewController {
     var selectedIdeaCriteriaButton: [UIButton] = []
     
     var selectedIdeaPrice: IdeaPrice?
+//    var selectedLocalOrUniversal: LocalOrUniversal?
     var selectedIdeaPriceButton: UIButton?
     
     
@@ -175,6 +176,8 @@ class PostViewController: UIViewController {
             
         }
         
+        self.selectedIdeaPrice = ideaPrice
+        
         if ideaPrice != IdeaController.shared.ideaPriceFilter {
             
             turnOnButtonColor(sender)
@@ -195,7 +198,34 @@ class PostViewController: UIViewController {
     
     @IBAction func postButtonTapped(_ sender: UIButton) {
         
+        guard let title = titleTextField.text, !title.isEmpty,
+        let description = descriptionTextView.text, !description.isEmpty,
+        let ideaType = selectedIdeaType,
+        let ideaPrice = selectedIdeaPrice,
+//        let ideaLocalOrUniversal = selectedLocalOrUniversal,
+            selectedIdeaCriterias.count == 3
+            else { print("Missing Info") ;return }
         
+        let zipCode = "84604"
+        
+        
+        if (UserController.shared.loggedInUser != nil) {
+            IdeaController.shared.postIdea(with: title, description: description, ideaType: ideaType, criteria: selectedIdeaCriterias, price: ideaPrice, zipCode: zipCode/*localOrUniversal: ideaLocalOrUniversal*/) { (success) in
+                
+                if success {
+                    
+                    self.tabBarController?.selectedIndex = 2
+                    self.resetVC()
+                } else {
+                    print("There was an issue with posting an idea")
+                }
+            }
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let signUpVC = storyboard.instantiateViewController(withIdentifier: "signInVC") as! LogInViewController; signUpVC.themeColor = vcThemeColor
+            self.present(signUpVC, animated: true, completion: nil)
+            attemptedPost = true
+        }
         
         
     }
@@ -357,25 +387,25 @@ class PostViewController: UIViewController {
     
     fileprivate func resetVC() {
         
-        //        vcThemeColor = UIColor.lightGray
-        ////        turnOffButtonColor(selectedIdeaTypeButton)
-        ////        updateVCThemeColor()
-        //        navigationController?.navigationBar.barTintColor = UIColor.white
-        ////        let _ = selectedIdeaCriteriaButton.map({ turnOffButtonColor($0) })
-        //
-        //        selectedIdeaType = nil
-        //        selectedIdeaTypeButton = nil
-        //
-        //        selectedIdeaCriterias = []
-        //        selectedIdeaCriteriaButton = []
-        //
-        //        selectedIdeaPrice = nil
-        //        selectedIdeaPriceButton = nil
-        //
-        //        titleTextField.text = ""
-        //        descriptionTextView.text = ""
-        //
-        //        scrollView.contentOffset = CGPoint(x: 0, y: 0)
+                vcThemeColor = UIColor.lightGray
+                turnOffButtonColor(selectedIdeaTypeButton)
+                updateVCThemeColor()
+                navigationController?.navigationBar.barTintColor = UIColor.white
+                let _ = selectedIdeaCriteriaButton.map({ turnOffButtonColor($0) })
+        
+                selectedIdeaType = nil
+                selectedIdeaTypeButton = nil
+        
+                selectedIdeaCriterias = []
+                selectedIdeaCriteriaButton = []
+        
+                selectedIdeaPrice = nil
+                selectedIdeaPriceButton = nil
+        
+                titleTextField.text = ""
+                descriptionTextView.text = ""
+        
+                scrollView.contentOffset = CGPoint(x: 0, y: 0)
     }
     
 }

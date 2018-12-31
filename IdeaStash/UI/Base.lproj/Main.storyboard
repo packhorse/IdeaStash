@@ -634,11 +634,11 @@
             <objects>
                 <viewController id="3zj-Fb-YuV" customClass="PostViewController" customModule="IdeaStash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DNo-AH-mnW">
-                        <rect key="frame" x="0.0" y="0.0" width="376" height="1100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="376" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFk-0l-6eQ">
-                                <rect key="frame" x="0.0" y="116" width="376" height="935"/>
+                                <rect key="frame" x="0.0" y="116" width="376" height="1035"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGZ-RW-N22" userLabel="contentView">
                                         <rect key="frame" x="0.0" y="0.0" width="376" height="1007"/>
@@ -769,7 +769,6 @@
                                                                     <color key="titleColor" red="0.33687958499999998" green="0.34021502640000001" blue="0.34021502640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="criteriaButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="piW-yl-684"/>
                                                                     <action selector="priceButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="pwg-jY-Z9k"/>
                                                                 </connections>
                                                             </button>
@@ -783,7 +782,6 @@
                                                                     <color key="titleColor" red="0.33687958499999998" green="0.34021502640000001" blue="0.34021502640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="criteriaButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="1Xf-Og-pch"/>
                                                                     <action selector="priceButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="KlB-V0-9wv"/>
                                                                 </connections>
                                                             </button>
@@ -797,7 +795,6 @@
                                                                     <color key="titleColor" red="0.33687958499999998" green="0.34021502640000001" blue="0.34021502640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="criteriaButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="8eo-1Q-xM6"/>
                                                                     <action selector="priceButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="b7l-Ej-PM3"/>
                                                                 </connections>
                                                             </button>
@@ -811,7 +808,6 @@
                                                                     <color key="titleColor" red="0.33687958499999998" green="0.34021502640000001" blue="0.34021502640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="criteriaButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="XlY-La-1dx"/>
                                                                     <action selector="priceButtonTapped:" destination="3zj-Fb-YuV" eventType="touchUpInside" id="OhE-cj-2F1"/>
                                                                 </connections>
                                                             </button>
@@ -1042,7 +1038,7 @@
                     <tabBarItem key="tabBarItem" title="Item" selectedImage="AddButtonExport" id="S9B-2I-TOj"/>
                     <navigationItem key="navigationItem" title="Post Your Ideas Here" id="SR5-lr-TYy"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <size key="freeformSize" width="376" height="1100"/>
+                    <size key="freeformSize" width="376" height="1200"/>
                     <connections>
                         <outlet property="criteriaButton1" destination="YFq-Gd-NTQ" id="jgx-Rk-PkL"/>
                         <outlet property="criteriaButton2" destination="DLa-5L-Jei" id="SSh-5W-yWd"/>
@@ -1068,7 +1064,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHO-Jl-yM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4546" y="280"/>
+            <point key="canvasLocation" x="4545.6000000000004" y="279.76011994002999"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wqc-6Y-yiK">

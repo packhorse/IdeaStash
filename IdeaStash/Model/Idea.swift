@@ -20,11 +20,11 @@ struct Idea {
     let zipCode: String
     let username: String
     let timestamp: Date
-    let localOrUniversal: String
+//    let localOrUniversal: LocalOrUniversal
     let listingID: String
     
-    init(withTitle title: String, description: String, ideaType: IdeaType, criteria: [IdeaCriteria], price: IdeaPrice, zipCode: String, username: String, timestamp: Date = Date(), localOrUniversal: String, listingID: String = UUID().uuidString) {
-        
+    init(withTitle title: String, description: String, ideaType: IdeaType, criteria: [IdeaCriteria], price: IdeaPrice, zipCode: String, username: String, timestamp: Date = Date(), /*localOrUniversal: LocalOrUniversal,*/ listingID: String = UUID().uuidString) {
+    
         self.title = title
         self.description = description
         self.ideaType = ideaType
@@ -33,7 +33,7 @@ struct Idea {
         self.zipCode = zipCode
         self.username = username
         self.timestamp = timestamp
-        self.localOrUniversal = localOrUniversal
+//        self.localOrUniversal = localOrUniversal
         self.listingID = listingID
         
     }
@@ -43,19 +43,20 @@ struct Idea {
         guard let title = dict[Constants.titleKey] as? String,
             let description = dict[Constants.descriptionKey] as? String,
             let ideaTypeAsString = dict[Constants.ideaTypeKey] as? String,
+//            let localOrUniversalAsString = dict[Constants.localOrUniversal] as? String,
             let ideaType = IdeaType(rawValue: ideaTypeAsString),
             let criteriaAsStringArray = dict[Constants.criteriaKey] as? [String],
             let price = dict[Constants.priceKey] as? IdeaPrice,
             let zipCode = dict[Constants.zipCodeKey] as? String,
             let username = dict[Constants.usernameKey] as? String,
             let timestamp = dict[Constants.timestampKey] as? Date,
-            let localOrUniversal = dict[Constants.localOrUniversal] as? String,
+//            let localOrUniversal = LocalOrUniversal(rawValue: localOrUniversalAsString),
             let listingID = dict[Constants.listingIDKey] as? String
         else { print("Error initializing idea from type directory") ; return nil }
         
         let criteria = criteriaAsStringArray.compactMap({ IdeaCriteria(rawValue: $0) })
         
-        self.init(withTitle: title, description: description, ideaType: ideaType, criteria: criteria, price: price, zipCode: zipCode, username: username, timestamp: timestamp, localOrUniversal: localOrUniversal, listingID: listingID)
+        self.init(withTitle: title, description: description, ideaType: ideaType, criteria: criteria, price: price, zipCode: zipCode, username: username, timestamp: timestamp, /*localOrUniversal: localOrUniversal,*/ listingID: listingID)
         
         
         
@@ -115,3 +116,9 @@ enum IdeaPrice: String {
     case average
     case any
 }
+
+//enum LocalOrUniversal: String {
+//    
+//    case local
+//    case universal
+//}
