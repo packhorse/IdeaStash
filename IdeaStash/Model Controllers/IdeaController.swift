@@ -98,7 +98,7 @@ class IdeaController {
             
             let ideas = ideaDocs.compactMap({ Idea(withDict: $0.data()) })
             
-            self.ideas = ideas.sorted(by: { $0.timestamp > $1.timestamp })
+            self.ideas = ideas.sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue()  })
             completion(false)
         }
     }

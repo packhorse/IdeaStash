@@ -12,10 +12,10 @@ class ListingDetailViewController: UIViewController {
     
     var idea: Idea? {
         didSet {
-            
+            updateViews()
         }
     }
-
+    
     var themeColor: UIColor? = UIColor.lightGray
     
     @IBOutlet weak var backgroundColorView: UIView!
@@ -28,13 +28,12 @@ class ListingDetailViewController: UIViewController {
     @IBOutlet weak var thisIdeaHelpedMeButton: UIButton!
     @IBOutlet weak var priceLabel: UILabel!
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        // Do any additional setup after loading the view.
+       setupButtons()
     }
     
     
@@ -48,23 +47,23 @@ class ListingDetailViewController: UIViewController {
     @IBAction func reportIdeaButtonTapped(_ sender: UIButton) {
         
         let alertVC = UIAlertController(title: "Are you sure?", message: "By clicking \"Report\", you are reporting this listing for review by our moderators and it may result in the listing being removed.", preferredStyle: .alert)
-
+        
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let report = UIAlertAction(title: "Report", style: .destructive) { (_) in
-
+            
             IdeaController.shared.reportIdea(withIdeaID: self.idea!.listingID, completion: { (successful) in
                 if successful {
                     self.dismiss(animated: true, completion: nil)
                 }
             })
         }
-
+        
         alertVC.addAction(cancel)
         alertVC.addAction(report)
-
+        
         present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func setupButtons() {
         
         guard let username = idea?.username else { return }
@@ -73,7 +72,7 @@ class ListingDetailViewController: UIViewController {
             guard let postingUser = user else { return }
         }
     }
-
+    
     fileprivate func updateViews() {
         
         guard let idea = idea else { return }
@@ -81,14 +80,14 @@ class ListingDetailViewController: UIViewController {
         loadViewIfNeeded()
         posterIdeaTypeLabel.text = "\(idea.ideaType)"
         titleLabel.text = idea.title
-        priceLabel.text = idea.price.rawValue
+        priceLabel.text = idea.ideaPrice.rawValue
         ideaDescriptionLabel.text = idea.description
-//        smallHourlyPayLabel.text = idea.
-//        jobTypeLabel.text = idea.ideaType
-//        qualitiesLabel.text = getQuali
+        //        smallHourlyPayLabel.text = idea.
+        //        jobTypeLabel.text = idea.ideaType
+        //        qualitiesLabel.text = getQuali
         
         
-//        setThemeColor()
+                setThemeColor()
     }
     
     fileprivate func setThemeColor() {
@@ -96,11 +95,11 @@ class ListingDetailViewController: UIViewController {
         guard let idea = idea else { return }
         
         switch idea.ideaType {
-        case .alone :
+        case .Alone :
             themeColor = UIColor(named: Constants.coolBlue)
-        case .family :
+        case .Family :
             themeColor = UIColor(named: Constants.coolOrange)
-        case .friendsOrDate :
+        case .FriendsOrDate :
             themeColor = UIColor(named: Constants.rudeRed)
         }
         
@@ -108,6 +107,23 @@ class ListingDetailViewController: UIViewController {
         reportListingButton.setTitleColor(themeColor, for: .normal)
         
     }
+    
+    
+    
+    fileprivate func getIdeaTypeAsString() -> String {
+        
+        guard let idea = idea else { return "" }
+        
+        switch idea.ideaType {
+        case .Alone :
+            return "Alone"
+        case .Family :
+            return "Family"
+        case .FriendsOrDate :
+            return "Friends/Date"
+        }
+    }
+    
     
     fileprivate func getCriteriaAsString() -> String {
         
@@ -141,22 +157,27 @@ class ListingDetailViewController: UIViewController {
         return criteriaOrQualities.joined(separator: ", ")
     }
     
-    fileprivate func getIdeaTypeAsString() -> String {
+    
+    fileprivate func getIdeaPricaAsString() -> String {
         
         guard let idea = idea else { return "" }
         
-        switch idea.ideaType {
-        case .alone :
-            return "Alone"
-        case .family :
-            return "Family"
-        case .friendsOrDate :
-            return "Friends/Date"
+        
+        switch idea.ideaPrice {
+        case .free :
+            return "Free"
+        case .cheap :
+            return "$"
+        case .average :
+            return "$$"
+        case .any :
+            return "Any"
+            
         }
     }
-    
-    
 }
+
+
 
 extension Date {
     

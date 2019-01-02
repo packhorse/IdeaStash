@@ -33,7 +33,7 @@ class ListingsViewController: UIViewController {
     
     @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
         
-        //        JobListingController.shared.fetchAllJobListings { (_) in }
+                IdeaController.shared.fetchAllIdeas { (_) in }
     }
     
     @objc func updateViews() {

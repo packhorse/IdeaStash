@@ -65,13 +65,13 @@ class SearchScreenViewController: UIViewController {
         switch sender.restorationIdentifier {
             
         case "alone":
-            ideaType = IdeaType.alone
+            ideaType = IdeaType.Alone
             vcThemeColor = UIColor(named: Constants.coolBlue)
         case "family":
-            ideaType = IdeaType.family
+            ideaType = IdeaType.Family
             vcThemeColor = UIColor(named: Constants.coolOrange)
         case "friendsOrDate":
-            ideaType = IdeaType.friendsOrDate
+            ideaType = IdeaType.FriendsOrDate
             vcThemeColor = UIColor(named: Constants.rudeRed)
         default:
             print("Something went wrong when searching")
@@ -252,13 +252,13 @@ class SearchScreenViewController: UIViewController {
             var selectedButton: UIButton? = nil
             
             switch ideaType {
-            case .alone :
+            case .Alone :
                 vcThemeColor = UIColor(named: Constants.coolBlue)
                 selectedButton = ideaTypeButton1
-            case .family :
+            case .Family :
                 vcThemeColor = UIColor(named: Constants.coolOrange)
                 selectedButton = ideaTypeButton2
-            case .friendsOrDate :
+            case .FriendsOrDate :
                 vcThemeColor = UIColor(named: Constants.rudeRed)
                 selectedButton = ideaTypeButton3
             }

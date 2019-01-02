@@ -38,7 +38,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     
-    @IBAction func settingsButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func logoutButtonTapped(_ sender: UIBarButtonItem) {
         
         presentActionSheet()
     }

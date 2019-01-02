@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B808CAFA21DD2D7900CD9F79 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B808CAF921DD2D7900CD9F79 /* LaunchViewController.swift */; };
 		B85A681B21C9B02C00ED4A0E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85A681A21C9B02C00ED4A0E /* LocationManager.swift */; };
 		B85A681D21C9B2C400ED4A0E /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85A681C21C9B2C400ED4A0E /* PostViewController.swift */; };
 		B8810F8921CABC2300D670F9 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8810F8821CABC2300D670F9 /* ListingsViewController.swift */; };
@@ -36,6 +37,7 @@
 		4192BB9CEF20E26904BDFEE2 /* Pods-IdeaStash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaStash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IdeaStash/Pods-IdeaStash.debug.xcconfig"; sourceTree = "<group>"; };
 		63E39FBC172AEFFE02F68D82 /* Pods-IdeaStash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaStash.release.xcconfig"; path = "Pods/Target Support Files/Pods-IdeaStash/Pods-IdeaStash.release.xcconfig"; sourceTree = "<group>"; };
 		91DE82D5F508E2827E5EEC7A /* Pods_IdeaStash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdeaStash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B808CAF921DD2D7900CD9F79 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		B85A681A21C9B02C00ED4A0E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B85A681C21C9B2C400ED4A0E /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		B8810F8821CABC2300D670F9 /* ListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +114,6 @@
 			children = (
 				B8A3290321C94FD300EB6939 /* AppDelegate.swift */,
 				B8A3290A21C94FD300EB6939 /* Assets.xcassets */,
-				B8A3290C21C94FD300EB6939 /* LaunchScreen.storyboard */,
 				B8A3290F21C94FD300EB6939 /* Info.plist */,
 				B8A3292821C9721400EB6939 /* GoogleService-Info.plist */,
 			);
@@ -155,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				B8A3290721C94FD300EB6939 /* Main.storyboard */,
+				B8A3290C21C94FD300EB6939 /* LaunchScreen.storyboard */,
+				B808CAF921DD2D7900CD9F79 /* LaunchViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B85A681D21C9B2C400ED4A0E /* PostViewController.swift in Sources */,
+				B808CAFA21DD2D7900CD9F79 /* LaunchViewController.swift in Sources */,
 				B8A3293B21C9933400EB6939 /* UserController.swift in Sources */,
 				B8A3293521C990B800EB6939 /* SignUpViewController.swift in Sources */,
 				B8A3293D21C99D1100EB6939 /* FirebaseManager.swift in Sources */,

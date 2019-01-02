@@ -98,7 +98,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="aRY-fd-Oka">
                             <color key="tintColor" red="0.60783725980000003" green="0.60783916709999997" blue="0.60784339899999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <action selector="settingsButtonTapped:" destination="m2T-3D-MQb" id="Sms-va-J2w"/>
+                                <action selector="logoutButtonTapped:" destination="m2T-3D-MQb" id="Sms-va-J2w"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1206,7 +1206,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="QKn-PS-iFP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Uvl-e2-Gfd" secondAttribute="leading" symbolic="YES" id="Boh-sd-w3a"/>
+                            <constraint firstItem="QKn-PS-iFP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Uvl-e2-Gfd" secondAttribute="leading" constant="20" symbolic="YES" id="Boh-sd-w3a"/>
                             <constraint firstItem="Oo8-fg-AV7" firstAttribute="centerX" secondItem="Uvl-e2-Gfd" secondAttribute="centerX" id="LlL-Ag-al4"/>
                             <constraint firstItem="cIX-W0-eHh" firstAttribute="trailing" secondItem="QKn-PS-iFP" secondAttribute="trailing" constant="16" id="MHB-al-OUf"/>
                             <constraint firstItem="WWK-sJ-TMG" firstAttribute="centerX" secondItem="Uvl-e2-Gfd" secondAttribute="centerX" id="P69-9B-YFb"/>
@@ -1255,7 +1255,6 @@
                                                     <color key="titleColor" red="0.60784739259999998" green="0.60783559080000005" blue="0.60784357789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="dismissButtonTapped:" destination="TZH-dK-27f" eventType="touchUpInside" id="Kbw-wc-kZy"/>
                                                     <action selector="dismissButtonTapped:" destination="dhV-vO-VvQ" eventType="touchUpInside" id="nJU-Dv-yD9"/>
                                                 </connections>
                                             </button>

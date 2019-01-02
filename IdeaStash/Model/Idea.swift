@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import FirebaseFirestore
 
 struct Idea {
     
@@ -16,20 +16,20 @@ struct Idea {
     let description: String
     let ideaType: IdeaType
     let criteria: [IdeaCriteria]
-    let price: IdeaPrice
+    let ideaPrice: IdeaPrice
     let zipCode: String
     let username: String
-    let timestamp: Date
+    let timestamp: Timestamp
 //    let localOrUniversal: LocalOrUniversal
     let listingID: String
     
-    init(withTitle title: String, description: String, ideaType: IdeaType, criteria: [IdeaCriteria], price: IdeaPrice, zipCode: String, username: String, timestamp: Date = Date(), /*localOrUniversal: LocalOrUniversal,*/ listingID: String = UUID().uuidString) {
+    init(withTitle title: String, description: String, ideaType: IdeaType, criteria: [IdeaCriteria], price: IdeaPrice, zipCode: String, username: String, timestamp: Timestamp = Timestamp(date: Date()), /*localOrUniversal: LocalOrUniversal,*/ listingID: String = UUID().uuidString) {
     
         self.title = title
         self.description = description
         self.ideaType = ideaType
         self.criteria = criteria
-        self.price = price
+        self.ideaPrice = price
         self.zipCode = zipCode
         self.username = username
         self.timestamp = timestamp
@@ -49,7 +49,7 @@ struct Idea {
             let price = dict[Constants.priceKey] as? IdeaPrice,
             let zipCode = dict[Constants.zipCodeKey] as? String,
             let username = dict[Constants.usernameKey] as? String,
-            let timestamp = dict[Constants.timestampKey] as? Date,
+            let timestamp = dict[Constants.timestampKey] as? Timestamp,
 //            let localOrUniversal = LocalOrUniversal(rawValue: localOrUniversalAsString),
             let listingID = dict[Constants.listingIDKey] as? String
         else { print("Error initializing idea from type directory") ; return nil }
@@ -74,7 +74,7 @@ struct Idea {
             Constants.descriptionKey : description,
             Constants.ideaTypeKey : ideaType.rawValue,
             Constants.criteriaKey : criteriaAsStringArray,
-            Constants.priceKey : price,
+            Constants.priceKey : ideaPrice.rawValue,
             Constants.zipCodeKey : zipCode,
             Constants.usernameKey : username,
             Constants.timestampKey : timestamp,
@@ -88,9 +88,9 @@ struct Idea {
 
 enum IdeaType: String {
     
-    case family
-    case friendsOrDate
-    case alone
+    case Family
+    case FriendsOrDate
+    case Alone
     
 }
 

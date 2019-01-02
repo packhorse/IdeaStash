@@ -83,13 +83,13 @@ class PostViewController: UIViewController {
         switch sender.restorationIdentifier {
             
         case "Alone":
-            ideaType = IdeaType.alone
+            ideaType = IdeaType.Alone
             vcThemeColor = UIColor(named: Constants.coolBlue)
         case "Family":
-            ideaType = IdeaType.family
+            ideaType = IdeaType.Family
             vcThemeColor = UIColor(named: Constants.coolOrange)
         case "FriendsOrDates":
-            ideaType = IdeaType.friendsOrDate
+            ideaType = IdeaType.FriendsOrDate
             vcThemeColor = UIColor(named: Constants.rudeRed)
         default:
             print("Something went wrong when posting")

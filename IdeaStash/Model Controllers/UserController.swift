@@ -17,7 +17,7 @@ class UserController {
     
     var loggedInUser: User? {
         didSet {
-//            IdeaController.shared.getMyListings()
+            IdeaController.shared.getMyIdeas()
         }
     }
     

@@ -12,6 +12,8 @@ class ListingCollectionViewCell: UICollectionViewCell {
     
     var idea: Idea? {
         didSet {
+            setCellColor()
+            customUI()
             setLabels()
             
         }
@@ -30,7 +32,7 @@ class ListingCollectionViewCell: UICollectionViewCell {
         posterIdeaType.text = "\(idea.ideaType)"
         ideaTitleLabel.text = idea.title
         ideaDescriptionLabel.text = idea.description
-        priceLabel.text = idea.price.rawValue
+        priceLabel.text = idea.ideaPrice.rawValue
 //        localOrUniversalLabel.text = idea.localOrUniversal.rawValue
         
     }
@@ -48,11 +50,11 @@ class ListingCollectionViewCell: UICollectionViewCell {
     func setCellColor() {
         
         switch idea!.ideaType {
-        case .alone :
+        case .Alone :
             cellColor = UIColor(named: Constants.coolBlue)
-        case .family :
+        case .Family :
             cellColor = UIColor(named: Constants.coolOrange)
-        case .friendsOrDate :
+        case .FriendsOrDate :
             cellColor = UIColor(named: Constants.rudeRed)
         }
     }
