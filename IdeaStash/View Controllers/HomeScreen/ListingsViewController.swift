@@ -27,6 +27,14 @@ class ListingsViewController: UIViewController {
         let collectionViewNib = UINib(nibName: "ListingCollectionViewCell", bundle: nil)
         
         collectionView.register(collectionViewNib, forCellWithReuseIdentifier: "listingCell")
+        
+        IdeaController.shared.fetchAllIdeas { (success) in
+            if success {
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
     }
     
     

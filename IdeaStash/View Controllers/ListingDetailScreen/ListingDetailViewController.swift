@@ -46,7 +46,7 @@ class ListingDetailViewController: UIViewController {
     
     @IBAction func reportIdeaButtonTapped(_ sender: UIButton) {
         
-        let alertVC = UIAlertController(title: "Are you sure?", message: "By clicking \"Report\", you are reporting this listing for review by our moderators and it may result in the listing being removed.", preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Are you sure?", message: "By clicking \"Report\", you are reporting this listing for review by our moderators and it may result in the idea being removed.", preferredStyle: .alert)
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let report = UIAlertAction(title: "Report", style: .destructive) { (_) in
@@ -82,10 +82,6 @@ class ListingDetailViewController: UIViewController {
         titleLabel.text = idea.title
         priceLabel.text = idea.ideaPrice.rawValue
         ideaDescriptionLabel.text = idea.description
-        //        smallHourlyPayLabel.text = idea.
-        //        jobTypeLabel.text = idea.ideaType
-        //        qualitiesLabel.text = getQuali
-        
         
                 setThemeColor()
     }

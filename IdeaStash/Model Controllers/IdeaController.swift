@@ -37,20 +37,20 @@ class IdeaController {
     
     var ideaTypeFilter: IdeaType? = nil {
         didSet {
-//            sortIdeas()
+            sortIdeas()
         }
     }
     
     
     var ideaCriteriaFilters = [IdeaCriteria]() {
         didSet {
-//            sortIdeas()
+            sortIdeas()
         }
     }
     
     var ideaPriceFilter: IdeaPrice? = nil {
         didSet {
-//            sortIdeas()
+            sortIdeas()
         }
     }
     
@@ -58,7 +58,7 @@ class IdeaController {
     func postIdea(with title: String, description: String,
                   ideaType: IdeaType, criteria: [IdeaCriteria],
                   price: IdeaPrice, zipCode: String, /*localOrUniversal: LocalOrUniversal,*/
-                  completion: @escaping (Bool) -> Void) {
+        completion: @escaping (Bool) -> Void) {
         
         guard let loggedInUser = UserController.shared.loggedInUser else {
             print("Error: there is no logged in user \n\(#function)")
@@ -67,7 +67,7 @@ class IdeaController {
         }
         
         let username = loggedInUser.username
-
+        
         
         let idea = Idea(withTitle: title, description: description, ideaType: ideaType, criteria: criteria, price: price, zipCode: zipCode, username: username /*localOrUniversal: localOrUniversal*/)
         
@@ -99,24 +99,47 @@ class IdeaController {
             let ideas = ideaDocs.compactMap({ Idea(withDict: $0.data()) })
             
             self.ideas = ideas.sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue()  })
-            completion(false)
+            completion(true)
         }
     }
     
-    func sortIdeas(){
-
-
+    func sortIdeas() {
+        
+        var sortedListingsPlaceholder = ideas
+        
+        if ideaPriceFilter != IdeaPrice.any {
+            sortedListingsPlaceholder = sortedListingsPlaceholder.filter( {$0.ideaPrice == ideaPriceFilter} )
+        }
+        
         if ideaCriteriaFilters.count > 0 {
-            
-            
-            
+            sortedListingsPlaceholder.sort { (ideaA, ideaB) -> Bool in
+                
+                var counterA = 0
+                var counterB = 0
+                
+                for criteriaFilter in ideaCriteriaFilters {
+                    if ideaA.criteria.contains(criteriaFilter) {
+                        counterA += 1
+                    }
+                    if ideaB.criteria.contains(criteriaFilter) {
+                        counterB += 1
+                    }
+                }
+                return counterA >= counterB
             }
         }
+        
+        if let ideaTypeFilter = ideaTypeFilter {
+            sortedIdeas = sortedListingsPlaceholder.filter({$0.ideaType == ideaTypeFilter })
+        } else {
+            sortedIdeas = sortedListingsPlaceholder
+        }
+    }
     
-
-
+    
+    
     func getMyIdeas() {
-
+        
         guard let currentUsername = UserController.shared.loggedInUser?.username else {
             myIdeas = []
             return
@@ -124,8 +147,8 @@ class IdeaController {
         
         myIdeas = ideas.filter { $0.username == currentUsername}
     }
-
-
+    
+    
     
     func reportIdea(withIdeaID listingID: String, completion: @escaping (Bool) -> Void) {
         

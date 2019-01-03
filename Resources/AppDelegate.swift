@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
+        let _ = Firestore.firestore()
+        
         let db = Firestore.firestore()
         let settings = db.settings
         settings.areTimestampsInSnapshotsEnabled = true
@@ -26,6 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UserController.shared.fetchLoggedInUserProfile { (_) in
             print("retrieved logged in user prof")
+            
+            IdeaController.shared.fetchAllIdeas { (success) in
+                if success {
+                    IdeaController.shared.getMyIdeas()
+                }
+            }
         }
         return true
     }
@@ -53,5 +61,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController == tabBarController.viewControllers?[2] {
+            if UserController.shared.loggedInUser == nil {
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginVC = storyboard.instantiateViewController(withIdentifier: "signInVC") as! LogInViewController
+                tabBarController.present(loginVC, animated: true, completion: nil)
+                return false
+            }
+        }
+        return true
+    }
 }
 

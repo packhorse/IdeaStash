@@ -16,15 +16,15 @@ class PostViewController: UIViewController {
     //These are the varialbes that change based on the4 selection=by the user.
     var selectedIdeaType: IdeaType?
     var selectedIdeaTypeButton: UIButton?
+    var selectedIdeaPrice: IdeaPrice?
+    //    var selectedLocalOrUniversal: LocalOrUniversal?
+    var selectedIdeaPriceButton: UIButton?
+    
+    
     var vcThemeColor: UIColor? = UIColor.lightGray
     
     var selectedIdeaCriterias: [IdeaCriteria] = []
     var selectedIdeaCriteriaButton: [UIButton] = []
-    
-    var selectedIdeaPrice: IdeaPrice?
-//    var selectedLocalOrUniversal: LocalOrUniversal?
-    var selectedIdeaPriceButton: UIButton?
-    
     
     
     @IBOutlet weak var scrollView: UIScrollView!

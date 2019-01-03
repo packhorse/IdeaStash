@@ -43,5 +43,5 @@ struct Constants {
     static let coolOrange = "CoolOrange"
     static let rudeRed = "RudeRed"
     
-    static let maxPaySliderAmount = 200
+
 }

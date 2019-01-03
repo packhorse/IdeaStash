@@ -37,12 +37,7 @@ class SearchScreenViewController: UIViewController {
     @IBOutlet weak var priceRangeButton3: UIButton!
     @IBOutlet weak var priceRangeButton4: UIButton!
     
-    
-    
-    
     @IBOutlet weak var applyFiltersButton: UIButton!
-    
-    
     
     
     override func viewDidLoad() {
@@ -74,7 +69,7 @@ class SearchScreenViewController: UIViewController {
             ideaType = IdeaType.FriendsOrDate
             vcThemeColor = UIColor(named: Constants.rudeRed)
         default:
-            print("Something went wrong when searching")
+            print("Something went wrong when searching // Idea Type")
         }
         
         if ideaType != IdeaController.shared.ideaTypeFilter {
@@ -138,6 +133,7 @@ class SearchScreenViewController: UIViewController {
                 IdeaController.shared.ideaCriteriaFilters.remove(at: 2)
                 selectedCriteriaButtons.remove(at: 2)
             }
+            
             IdeaController.shared.ideaCriteriaFilters.append(unwrappedCriteria)
             selectedCriteriaButtons.append(sender)
                         turnOnButtonColor(sender)
@@ -273,6 +269,7 @@ class SearchScreenViewController: UIViewController {
     fileprivate func turnOnExistingCriteriaButtons() {
         
         for criteria in IdeaController.shared.ideaCriteriaFilters {
+            
             
             switch criteria {
             case .adventurous:

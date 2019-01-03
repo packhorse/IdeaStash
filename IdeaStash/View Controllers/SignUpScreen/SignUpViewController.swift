@@ -9,6 +9,7 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
+    
     var themeColor = UIColor(named: "CoolBlue")
     
     // MARK: - Outlets

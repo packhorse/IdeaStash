@@ -46,7 +46,7 @@ struct Idea {
 //            let localOrUniversalAsString = dict[Constants.localOrUniversal] as? String,
             let ideaType = IdeaType(rawValue: ideaTypeAsString),
             let criteriaAsStringArray = dict[Constants.criteriaKey] as? [String],
-            let price = dict[Constants.priceKey] as? IdeaPrice,
+            let priceRawValue = dict[Constants.priceKey] as? String,
             let zipCode = dict[Constants.zipCodeKey] as? String,
             let username = dict[Constants.usernameKey] as? String,
             let timestamp = dict[Constants.timestampKey] as? Timestamp,
@@ -54,6 +54,7 @@ struct Idea {
             let listingID = dict[Constants.listingIDKey] as? String
         else { print("Error initializing idea from type directory") ; return nil }
         
+        let price = IdeaPrice(rawValue: priceRawValue)!
         let criteria = criteriaAsStringArray.compactMap({ IdeaCriteria(rawValue: $0) })
         
         self.init(withTitle: title, description: description, ideaType: ideaType, criteria: criteria, price: price, zipCode: zipCode, username: username, timestamp: timestamp, /*localOrUniversal: localOrUniversal,*/ listingID: listingID)
