@@ -396,6 +396,7 @@ class PostViewController: UIViewController {
                 selectedIdeaType = nil
                 selectedIdeaTypeButton = nil
         
+        
                 selectedIdeaCriterias = []
                 selectedIdeaCriteriaButton = []
         
