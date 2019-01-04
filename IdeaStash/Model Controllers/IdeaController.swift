@@ -107,9 +107,14 @@ class IdeaController {
         
         var sortedListingsPlaceholder = ideas
         
-        if ideaPriceFilter != IdeaPrice.any {
+        if ideaPriceFilter == IdeaPrice.free {
+            sortedListingsPlaceholder = sortedListingsPlaceholder.filter( {$0.ideaPrice == ideaPriceFilter} )
+        } else if ideaPriceFilter == IdeaPrice.cheap {
+                sortedListingsPlaceholder = sortedListingsPlaceholder.filter( {$0.ideaPrice == ideaPriceFilter} )
+        } else if ideaPriceFilter == IdeaPrice.average {
             sortedListingsPlaceholder = sortedListingsPlaceholder.filter( {$0.ideaPrice == ideaPriceFilter} )
         }
+    
         
         if ideaCriteriaFilters.count > 0 {
             sortedListingsPlaceholder.sort { (ideaA, ideaB) -> Bool in

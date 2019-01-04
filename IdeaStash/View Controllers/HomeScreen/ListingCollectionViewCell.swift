@@ -23,7 +23,10 @@ class ListingCollectionViewCell: UICollectionViewCell {
     @IBOutlet var ideaTitleLabel: UILabel!
     @IBOutlet weak var ideaDescriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var localOrUniversalLabel: UILabel!
+    @IBOutlet var customCellView: UIView!
+    @IBOutlet var roundedWhiteViewBottom: UIView!
+    @IBOutlet var MiddleWhiteViewSquared: UIView!
+    
     
     func setLabels() {
         
@@ -37,9 +40,7 @@ class ListingCollectionViewCell: UICollectionViewCell {
         
     }
     
-    @IBOutlet var customCellView: UIView!
-    @IBOutlet var roundedWhiteViewBottom: UIView!
-    @IBOutlet var MiddleWhiteViewSquared: UIView!
+
     
     var cellColor: UIColor? = nil
     

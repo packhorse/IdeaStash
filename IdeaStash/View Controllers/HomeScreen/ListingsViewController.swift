@@ -37,6 +37,12 @@ class ListingsViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.collectionView.reloadData()
+        
+    }
+    
     
     
     @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
@@ -57,7 +63,7 @@ extension ListingsViewController: UICollectionViewDataSource, UICollectionViewDe
         if IdeaController.shared.ideaTypeFilter == nil &&
             IdeaController.shared.ideaCriteriaFilters.count == 0 &&
             IdeaController.shared.ideaPriceFilter == nil {
-            return IdeaController.shared.sortedIdeas.count
+            return IdeaController.shared.ideas.count
         } else {
             return IdeaController.shared.sortedIdeas.count
         }
@@ -71,7 +77,7 @@ extension ListingsViewController: UICollectionViewDataSource, UICollectionViewDe
         if IdeaController.shared.ideaTypeFilter == nil &&
         IdeaController.shared.ideaCriteriaFilters.count == 0 &&
             IdeaController.shared.ideaPriceFilter == nil {
-            idea = IdeaController.shared.sortedIdeas[indexPath.row]
+            idea = IdeaController.shared.ideas[indexPath.row]
         } else {
             idea = IdeaController.shared.sortedIdeas[indexPath.row]
         }
@@ -84,10 +90,11 @@ extension ListingsViewController: UICollectionViewDataSource, UICollectionViewDe
 }
 
 extension ListingsViewController : UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionViewDelegate, layout collectionViewLayout:
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
         UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let widthOfScreen = view.frame.width
-        return CGSize(width: (widthOfScreen - 3 * 16) / 2 + 10, height: ((widthOfScreen - 3 * 16) / 2) + 50)
+        return CGSize(width: (widthOfScreen - 3 * 16) / 2 + 10, height: ((widthOfScreen - 3 * 16) / 2) + 56)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

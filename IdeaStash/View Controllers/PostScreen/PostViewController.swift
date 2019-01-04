@@ -433,15 +433,6 @@ extension PostViewController: UITextFieldDelegate, UITextViewDelegate {
         return true
     }
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        
-        if text == "\n" {
-            descriptionTextView.resignFirstResponder()
-            return false
-        }
-        
-        return true
-    }
     
     @objc func keyboardDidShow(notification: NSNotification) {
         

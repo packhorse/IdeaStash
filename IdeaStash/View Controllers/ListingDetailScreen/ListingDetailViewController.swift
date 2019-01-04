@@ -82,6 +82,8 @@ class ListingDetailViewController: UIViewController {
         titleLabel.text = idea.title
         priceLabel.text = idea.ideaPrice.rawValue
         ideaDescriptionLabel.text = idea.description
+        ideaCriteriaLabel.text = getCriteriaAsString()
+        userUsernameLabel.text = "@\(idea.username)"
         
                 setThemeColor()
     }
