@@ -54,6 +54,7 @@ struct Idea {
             let listingID = dict[Constants.listingIDKey] as? String
         else { print("Error initializing idea from type directory") ; return nil }
         
+    
         let price = IdeaPrice(rawValue: priceRawValue)!
         let criteria = criteriaAsStringArray.compactMap({ IdeaCriteria(rawValue: $0) })
         

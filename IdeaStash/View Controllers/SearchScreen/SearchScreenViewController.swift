@@ -12,7 +12,7 @@ class SearchScreenViewController: UIViewController {
     
     var selectedIdeaTypeButton: UIButton?
     var selectedCriteriaButtons: [UIButton] = []
-    var selectedPriceButton: UIButton?
+    var selectedIdeaPrice: UIButton?
     var vcThemeColor: UIColor? = UIColor.lightGray
     
     //Button idea types
@@ -163,9 +163,11 @@ class SearchScreenViewController: UIViewController {
         
         if ideaPrice != IdeaController.shared.ideaPriceFilter {
             
+            
             turnOnButtonColor(sender)
-            turnOffButtonColor(selectedPriceButton)
-            selectedPriceButton = sender
+            
+            turnOffButtonColor(selectedIdeaPrice)
+            selectedIdeaPrice = sender
             IdeaController.shared.ideaPriceFilter = ideaPrice
             
         } else {
@@ -173,7 +175,7 @@ class SearchScreenViewController: UIViewController {
             turnOffButtonColor(sender)
             IdeaController.shared.ideaPriceFilter = nil
             
-            selectedPriceButton = nil
+            selectedIdeaPrice = nil
             
         }
     }
@@ -229,7 +231,7 @@ class SearchScreenViewController: UIViewController {
         applyFiltersButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         applyFiltersButton.setTitleColor(UIColor.white, for: .normal)
         
-        guard let selectedPriceButton = selectedPriceButton else { return }
+        guard let selectedPriceButton = selectedIdeaPrice else { return }
         turnOnButtonColor(selectedPriceButton)
     }
     

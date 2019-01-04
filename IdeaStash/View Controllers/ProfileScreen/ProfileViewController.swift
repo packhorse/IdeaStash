@@ -93,7 +93,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         
         guard let currentUser = UserController.shared.loggedInUser else { return }
         
-        nameLabel.text = "\(currentUser.username)"
+        nameLabel.text = "@\(currentUser.username)"
         userBioLabel.text = currentUser.bio
         numberOfListingsLabel.text = String(IdeaController.shared.myIdeas.count)
         

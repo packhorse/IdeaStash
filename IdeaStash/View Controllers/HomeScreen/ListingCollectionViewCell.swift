@@ -72,6 +72,7 @@ class ListingCollectionViewCell: UICollectionViewCell {
         customCellView.layer.shadowRadius = 4
         customCellView.layer.shadowOpacity = 1
         customCellView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        
     }
     
 }
