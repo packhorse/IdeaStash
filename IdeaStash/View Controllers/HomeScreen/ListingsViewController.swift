@@ -94,11 +94,11 @@ extension ListingsViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
         UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let widthOfScreen = view.frame.width
-        return CGSize(width: (widthOfScreen - 3 * 16) / 2 + 10, height: ((widthOfScreen - 3 * 16) / 2) + 56)
+        return CGSize(width: (widthOfScreen - 3 * 16) / 2 + 14, height: ((widthOfScreen - 3 * 16) / 2) + 80)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets (top: 16, left: 10, bottom: 50, right: 10)
+        return UIEdgeInsets (top: 30, left: 10, bottom: 50, right: 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

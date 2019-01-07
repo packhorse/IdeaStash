@@ -69,7 +69,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let widthOfScreen = view.frame.width
-        return CGSize(width: (widthOfScreen - 3 * 16) / 2 + 10, height: ((widthOfScreen - 3 * 16) / 2) + 50)
+        return CGSize(width: (widthOfScreen - 3 * 16) / 2 + 14, height: ((widthOfScreen - 3 * 16) / 2) + 80)
     }
     
     

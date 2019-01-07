@@ -646,7 +646,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="V8B-16-ArK">
                                                 <rect key="frame" x="32.5" y="24" width="311" height="60"/>
-                                                <string key="text">Post your best ideas for other people to find. Select the tags down below that best describe your idea so it's easy for people to find. </string>
+                                                <string key="text">Post your best ideas for other people to find. Select the tags down below that best describe your idea so it's easy for people to discover. </string>
                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

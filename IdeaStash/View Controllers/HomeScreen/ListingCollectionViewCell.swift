@@ -63,10 +63,10 @@ class ListingCollectionViewCell: UICollectionViewCell {
     func customUI() {
         
         customCellView.layer.backgroundColor = cellColor?.cgColor
-        customCellView.layer.cornerRadius = 22.0
-        customCellView.layer.cornerRadius = 22.0
+        customCellView.layer.cornerRadius = 14.0
+        customCellView.layer.cornerRadius = 14.0
         
-        roundedWhiteViewBottom.layer.cornerRadius = 22.0
+        roundedWhiteViewBottom.layer.cornerRadius = 14.0
         
         customCellView.layer.shadowColor = cellColor?.cgColor
         customCellView.layer.shadowRadius = 4
