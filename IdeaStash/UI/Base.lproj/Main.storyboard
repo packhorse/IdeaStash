@@ -237,11 +237,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="HC0-cC-Ruf" id="BMp-Wu-aDK"/>
+                        <segue destination="pKm-o5-r2m" kind="show" identifier="toOnboarding" id="MbD-So-Mlp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZEW-VU-VwP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3366" y="-1150"/>
+        </scene>
+        <!--Onboarding-->
+        <scene sceneID="FRV-sA-mnM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Onboarding" id="pKm-o5-r2m" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sIE-7W-2Kg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4042" y="-1518"/>
         </scene>
         <!--Idea Search-->
         <scene sceneID="Bc1-dG-xwZ">

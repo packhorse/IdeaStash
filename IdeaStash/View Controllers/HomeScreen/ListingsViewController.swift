@@ -37,13 +37,28 @@ class ListingsViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if UserDefaults.standard.bool(forKey: "hasViewedWalkthrough") {
+            return
+        }
+        
+//        self.performSegue(withIdentifier: "toOnboarding", sender: self)
+        
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        //broken bit
+        if let walkthroughViewController = storyboard.instantiateViewController(withIdentifier: "WalkthroughViewController") as? WalkthroughContentViewController {
+            present(walkthroughViewController, animated: true, completion: nil)
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.collectionView.reloadData()
         
     }
     
-    
+
     
     @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
         

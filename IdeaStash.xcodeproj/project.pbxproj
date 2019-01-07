@@ -10,6 +10,10 @@
 		B808CAFA21DD2D7900CD9F79 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B808CAF921DD2D7900CD9F79 /* LaunchViewController.swift */; };
 		B85A681B21C9B02C00ED4A0E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85A681A21C9B02C00ED4A0E /* LocationManager.swift */; };
 		B85A681D21C9B2C400ED4A0E /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85A681C21C9B2C400ED4A0E /* PostViewController.swift */; };
+		B87D88DF21E4012C008AACD3 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B87D88DE21E4012C008AACD3 /* Onboarding.storyboard */; };
+		B87D88E421E4018E008AACD3 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87D88E121E4018E008AACD3 /* WalkthroughPageViewController.swift */; };
+		B87D88E521E4018E008AACD3 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87D88E221E4018E008AACD3 /* WalkthroughViewController.swift */; };
+		B87D88E621E4018E008AACD3 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87D88E321E4018E008AACD3 /* WalkthroughContentViewController.swift */; };
 		B8810F8921CABC2300D670F9 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8810F8821CABC2300D670F9 /* ListingsViewController.swift */; };
 		B8810F8B21CABC9E00D670F9 /* ListingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8810F8A21CABC9E00D670F9 /* ListingCollectionViewCell.swift */; };
 		B8810F8D21CABCFE00D670F9 /* ListingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8810F8C21CABCFE00D670F9 /* ListingCollectionViewCell.xib */; };
@@ -40,6 +44,10 @@
 		B808CAF921DD2D7900CD9F79 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		B85A681A21C9B02C00ED4A0E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B85A681C21C9B2C400ED4A0E /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		B87D88DE21E4012C008AACD3 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		B87D88E121E4018E008AACD3 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		B87D88E221E4018E008AACD3 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
+		B87D88E321E4018E008AACD3 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		B8810F8821CABC2300D670F9 /* ListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
 		B8810F8A21CABC9E00D670F9 /* ListingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCollectionViewCell.swift; sourceTree = "<group>"; };
 		B8810F8C21CABCFE00D670F9 /* ListingCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListingCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -76,6 +84,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B87D88E021E4014B008AACD3 /* OnboardingController */ = {
+			isa = PBXGroup;
+			children = (
+				B87D88E321E4018E008AACD3 /* WalkthroughContentViewController.swift */,
+				B87D88E121E4018E008AACD3 /* WalkthroughPageViewController.swift */,
+				B87D88E221E4018E008AACD3 /* WalkthroughViewController.swift */,
+			);
+			path = OnboardingController;
+			sourceTree = "<group>";
+		};
 		B8A328F721C94FD300EB6939 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +141,7 @@
 		B8A3291621C9500100EB6939 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B87D88E021E4014B008AACD3 /* OnboardingController */,
 				B8A3292121C96E8A00EB6939 /* LogInScreen */,
 				B8A3292721C96EE500EB6939 /* SignUpScreen */,
 				B8A3292621C96EDE00EB6939 /* HomeScreen */,
@@ -156,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				B8A3290721C94FD300EB6939 /* Main.storyboard */,
+				B87D88DE21E4012C008AACD3 /* Onboarding.storyboard */,
 				B8A3290C21C94FD300EB6939 /* LaunchScreen.storyboard */,
 				B808CAF921DD2D7900CD9F79 /* LaunchViewController.swift */,
 			);
@@ -327,6 +347,7 @@
 				B8810F8D21CABCFE00D670F9 /* ListingCollectionViewCell.xib in Resources */,
 				B8A3292921C9721400EB6939 /* GoogleService-Info.plist in Resources */,
 				B8A3290B21C94FD300EB6939 /* Assets.xcassets in Resources */,
+				B87D88DF21E4012C008AACD3 /* Onboarding.storyboard in Resources */,
 				B8810F9121CAC02A00D670F9 /* ListingDetailViewController.xib in Resources */,
 				B8A3290921C94FD300EB6939 /* Main.storyboard in Resources */,
 			);
@@ -425,15 +446,18 @@
 				B85A681D21C9B2C400ED4A0E /* PostViewController.swift in Sources */,
 				B808CAFA21DD2D7900CD9F79 /* LaunchViewController.swift in Sources */,
 				B8A3293B21C9933400EB6939 /* UserController.swift in Sources */,
+				B87D88E621E4018E008AACD3 /* WalkthroughContentViewController.swift in Sources */,
 				B8A3293521C990B800EB6939 /* SignUpViewController.swift in Sources */,
 				B8A3293D21C99D1100EB6939 /* FirebaseManager.swift in Sources */,
 				B85A681B21C9B02C00ED4A0E /* LocationManager.swift in Sources */,
 				B8810F8B21CABC9E00D670F9 /* ListingCollectionViewCell.swift in Sources */,
+				B87D88E521E4018E008AACD3 /* WalkthroughViewController.swift in Sources */,
 				B8810F9321CAD5C100D670F9 /* ProfileViewController.swift in Sources */,
 				B8A3291E21C9654A00EB6939 /* Idea.swift in Sources */,
 				B8A3290421C94FD300EB6939 /* AppDelegate.swift in Sources */,
 				B8A3293721C9922D00EB6939 /* SearchScreenViewController.swift in Sources */,
 				B8A3292021C9655500EB6939 /* User.swift in Sources */,
+				B87D88E421E4018E008AACD3 /* WalkthroughPageViewController.swift in Sources */,
 				B8810F8F21CABFAA00D670F9 /* ListingDetailViewController.swift in Sources */,
 				B8A3293321C990A700EB6939 /* LogInViewController.swift in Sources */,
 				B8A3293921C9932800EB6939 /* IdeaController.swift in Sources */,
