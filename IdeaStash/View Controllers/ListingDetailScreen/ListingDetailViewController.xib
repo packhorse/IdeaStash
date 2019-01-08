@@ -33,7 +33,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="106.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends/Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="sMc-kf-LQj">
-                            <rect key="frame" x="20" y="66" width="305" height="41"/>
+                            <rect key="frame" x="20" y="65.5" width="305" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="305" id="QGt-pj-WK7"/>
                                 <constraint firstAttribute="height" constant="41" id="tOr-Ja-v4h"/>
@@ -160,9 +160,9 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSn-a4-lcK">
-                    <rect key="frame" x="268" y="619" width="87" height="32"/>
+                    <rect key="frame" x="281" y="619" width="74" height="32"/>
                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                    <state key="normal" title="Report Listing"/>
+                    <state key="normal" title="Report Idea"/>
                     <connections>
                         <action selector="reportIdeaButtonTapped:" destination="-1" eventType="touchUpInside" id="3IF-re-vDT"/>
                     </connections>

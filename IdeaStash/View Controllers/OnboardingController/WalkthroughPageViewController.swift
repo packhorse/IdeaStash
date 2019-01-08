@@ -16,7 +16,7 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
     
     weak var walkthroughDelegate: WalkthroughPageViewControllerDelegate?
     
-    var pageHeadings = ["CREATE YOUR OWN CAFE GUIDE", "SHOW YOU THE LOCATION", "DISCOVER GREAT CAFES"]
+    var pageHeadings = ["Post Your Best Ideas For Other People To Find", "Discover Other People's Ideas", "Filter Through Those Ideas To Find Something Perfect For You."]
     var pageImages = ["onboarding image 1", "onboarding image 2 ", "onbaording image 3"] //images here
     var pageSubHeadings = ["Pin your favorite cafes and create your own guide", "Search and locate your favorite cafes on maps", "Find cafes shared by your friends"]
     

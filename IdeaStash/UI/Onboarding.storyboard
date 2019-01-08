@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,21 +14,21 @@
         <!--Walkthrough Page View Controller-->
         <scene sceneID="VMk-ma-LWE">
             <objects>
-                <pageViewController storyboardIdentifier="WalkthroughPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="XPi-Up-Lcy" customClass="WalkthroughPageViewController" customModule="Walkthrough" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="WalkthroughPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="XPi-Up-Lcy" customClass="WalkthroughPageViewController" customModule="IdeaStash" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wai-td-XdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-60" y="190"/>
+            <point key="canvasLocation" x="-52" y="196"/>
         </scene>
         <!--Walkthrough Content View Controller-->
         <scene sceneID="2Al-mq-FOC">
             <objects>
-                <viewController storyboardIdentifier="WalkthroughContentViewController" id="Uhp-UR-CPj" customClass="WalkthroughContentViewController" customModule="Walkthrough" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkthroughContentViewController" id="Uhp-UR-CPj" customClass="WalkthroughContentViewController" customModule="IdeaStash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UIn-we-ogv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="451"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="bPr-Un-TUX">
-                                <rect key="frame" x="24" y="50" width="327" height="330"/>
+                                <rect key="frame" x="24" y="50" width="327" height="370"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GY0-kY-he4">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="229"/>
@@ -35,23 +36,18 @@
                                             <constraint firstAttribute="width" secondItem="GY0-kY-he4" secondAttribute="height" multiplier="327:229" id="0zZ-3c-3TP"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qlq-QY-NXB">
-                                        <rect key="frame" x="118" y="279" width="91.5" height="51"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFN-Kn-jd8">
-                                                <rect key="frame" x="13.5" y="0.0" width="64" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subheading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVQ-DL-lGQ">
-                                                <rect key="frame" x="0.0" y="30.5" width="91.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFN-Kn-jd8">
+                                        <rect key="frame" x="131.5" y="279" width="64" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subheading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVQ-DL-lGQ">
+                                        <rect key="frame" x="118" y="349.5" width="91.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -78,7 +74,7 @@
         <!--Walkthrough View Controller-->
         <scene sceneID="Aza-pn-ger">
             <objects>
-                <viewController storyboardIdentifier="WalkthroughViewController" id="eQ0-3s-CS8" customClass="WalkthroughViewController" customModule="Walkthrough" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkthroughViewController" id="eQ0-3s-CS8" customClass="WalkthroughViewController" customModule="IdeaStash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tgY-4m-fSE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,12 +93,12 @@
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="OwT-4G-M1M">
                                                 <rect key="frame" x="75.5" y="0.0" width="39" height="37"/>
-                                                <color key="pageIndicatorTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="currentPageIndicatorTintColor" red="0.70677214860000004" green="0.27888861300000001" blue="0.27841106059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="currentPageIndicatorTintColor" name="RudeRed"/>
                                             </pageControl>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bn-Ih-ptI">
                                                 <rect key="frame" x="0.0" y="57" width="190" height="50"/>
-                                                <color key="backgroundColor" red="0.70677214860000004" green="0.27888861300000001" blue="0.27841106059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" name="RudeRed"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="190" id="13l-LV-rAg"/>
                                                     <constraint firstAttribute="height" constant="50" id="pCy-E1-uRe"/>
@@ -155,4 +151,9 @@
             <point key="canvasLocation" x="-994" y="197"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="RudeRed">
+            <color red="0.99599999189376831" green="0.31700000166893005" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

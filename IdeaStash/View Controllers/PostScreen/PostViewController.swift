@@ -12,14 +12,16 @@ class PostViewController: UIViewController {
     
     var attemptedPost = false
     
-    
     //These are the varialbes that change based on the4 selection=by the user.
     var selectedIdeaType: IdeaType?
     var selectedIdeaTypeButton: UIButton?
+    
     var selectedIdeaPrice: IdeaPrice?
-    //    var selectedLocalOrUniversal: LocalOrUniversal?
     var selectedIdeaPriceButton: UIButton?
     
+    
+    
+    //    var selectedLocalOrUniversal: LocalOrUniversal?
     
     var vcThemeColor: UIColor? = UIColor.lightGray
     
@@ -82,13 +84,13 @@ class PostViewController: UIViewController {
         
         switch sender.restorationIdentifier {
             
-        case "Alone":
+        case "alonePost":
             ideaType = IdeaType.Alone
             vcThemeColor = UIColor(named: Constants.coolBlue)
-        case "Family":
+        case "familyPost":
             ideaType = IdeaType.Family
             vcThemeColor = UIColor(named: Constants.coolOrange)
-        case "FriendsOrDates":
+        case "friendsOrDatePost":
             ideaType = IdeaType.FriendsOrDate
             vcThemeColor = UIColor(named: Constants.rudeRed)
         default:
@@ -114,23 +116,23 @@ class PostViewController: UIViewController {
         var ideaCriteria: IdeaCriteria?
         
         switch sender.restorationIdentifier {
-        case "adventurous":
+        case "adventurousPost":
             ideaCriteria = IdeaCriteria.adventurous
-        case "thrillful" :
+        case "thrillfulPost" :
             ideaCriteria = IdeaCriteria.thrillful
-        case "food" :
+        case "foodPost" :
             ideaCriteria = IdeaCriteria.hungry
-        case "indoors" :
+        case "indoorsPost" :
             ideaCriteria = IdeaCriteria.indoors
-        case "outdoors" :
+        case "outdoorsPost" :
             ideaCriteria = IdeaCriteria.outdoors
-        case "unique" :
+        case "uniquePost" :
             ideaCriteria = IdeaCriteria.unique
-        case "scary" :
+        case "scaryPost" :
             ideaCriteria = IdeaCriteria.scary
-        case "secret" :
+        case "secretPost" :
             ideaCriteria = IdeaCriteria.secret
-        case "romantic" :
+        case "romanticPost" :
             ideaCriteria = IdeaCriteria.romantic
         default: print("something went wront with sorting through your idea criteria")
             
@@ -163,13 +165,13 @@ class PostViewController: UIViewController {
         
         switch sender.restorationIdentifier {
             
-        case "Free" :
+        case "freePost" :
             ideaPrice = IdeaPrice.free
-        case "$" :
+        case "cheapPost" :
             ideaPrice = IdeaPrice.cheap
-        case "$$" :
+        case "averagePost" :
             ideaPrice = IdeaPrice.average
-        case "Any" :
+        case "anyPost" :
             ideaPrice = IdeaPrice.any
         default:
             print("There was an issue with the price criteria")

@@ -12,7 +12,8 @@ class SearchScreenViewController: UIViewController {
     
     var selectedIdeaTypeButton: UIButton?
     var selectedCriteriaButtons: [UIButton] = []
-    var selectedIdeaPrice: UIButton?
+    var selectedIdeaPriceButton: UIButton?
+    
     var vcThemeColor: UIColor? = UIColor.lightGray
     
     //Button idea types
@@ -59,13 +60,13 @@ class SearchScreenViewController: UIViewController {
         
         switch sender.restorationIdentifier {
             
-        case "alone":
+        case "aloneSearch":
             ideaType = IdeaType.Alone
             vcThemeColor = UIColor(named: Constants.coolBlue)
-        case "family":
+        case "familySearch":
             ideaType = IdeaType.Family
             vcThemeColor = UIColor(named: Constants.coolOrange)
-        case "friendsOrDate":
+        case "friendsOrDateSearch":
             ideaType = IdeaType.FriendsOrDate
             vcThemeColor = UIColor(named: Constants.rudeRed)
         default:
@@ -98,23 +99,23 @@ class SearchScreenViewController: UIViewController {
         var ideaCriteria: IdeaCriteria?
         
         switch sender.restorationIdentifier {
-        case "adventurous":
+        case "adventurousSearch":
             ideaCriteria = IdeaCriteria.adventurous
-        case "thrillful" :
+        case "thrillfulSearch" :
             ideaCriteria = IdeaCriteria.thrillful
-        case "hungry" :
+        case "foodSearch" :
             ideaCriteria = IdeaCriteria.hungry
-        case "indoors" :
+        case "indoorsSearch" :
             ideaCriteria = IdeaCriteria.indoors
-        case "outdoors" :
+        case "outdoorsSearch" :
             ideaCriteria = IdeaCriteria.outdoors
-        case "unique" :
+        case "uniqueSearch" :
             ideaCriteria = IdeaCriteria.unique
-        case "scary" :
+        case "scarySearch" :
             ideaCriteria = IdeaCriteria.scary
-        case "secret" :
+        case "secretSearch" :
             ideaCriteria = IdeaCriteria.secret
-        case "romantic" :
+        case "romanticSearch" :
             ideaCriteria = IdeaCriteria.romantic
         default: print("something went wront with sorting through your idea criteria")
             
@@ -148,13 +149,13 @@ class SearchScreenViewController: UIViewController {
         
         switch sender.restorationIdentifier {
             
-        case "Free" :
+        case "FreeSearch" :
             ideaPrice = IdeaPrice.free
-        case "$" :
+        case "CheapSearch" :
             ideaPrice = IdeaPrice.cheap
-        case "$$" :
+        case "AverageSearch" :
             ideaPrice = IdeaPrice.average
-        case "Any" :
+        case "AnySearch" :
             ideaPrice = IdeaPrice.any
         default:
             print("There was an issue with the price criteria")
@@ -166,16 +167,18 @@ class SearchScreenViewController: UIViewController {
             
             turnOnButtonColor(sender)
             
-            turnOffButtonColor(selectedIdeaPrice)
-            selectedIdeaPrice = sender
+            turnOffButtonColor(selectedIdeaPriceButton)
+            selectedIdeaPriceButton = sender
             IdeaController.shared.ideaPriceFilter = ideaPrice
             
         } else {
             
-            turnOffButtonColor(sender)
             IdeaController.shared.ideaPriceFilter = nil
+            selectedIdeaPriceButton = nil
             
-            selectedIdeaPrice = nil
+            turnOffButtonColor(sender)
+            turnOffColorTheme()
+            
             
         }
     }
@@ -231,7 +234,7 @@ class SearchScreenViewController: UIViewController {
         applyFiltersButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         applyFiltersButton.setTitleColor(UIColor.white, for: .normal)
         
-        guard let selectedPriceButton = selectedIdeaPrice else { return }
+        guard let selectedPriceButton = selectedIdeaPriceButton else { return }
         turnOnButtonColor(selectedPriceButton)
     }
     
@@ -242,6 +245,7 @@ class SearchScreenViewController: UIViewController {
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.titleLabel?.adjustsFontSizeToFitWidth = true
     }
+    
     
     fileprivate func turnOnExistingIdeaTypeFilterButton() {
         
@@ -319,9 +323,7 @@ class SearchScreenViewController: UIViewController {
             }
             
             turnOnButtonColor(selectedPriceButton!)
-         
-            
-            
+            selectedIdeaPriceButton = selectedPriceButton
         }
     }
     
