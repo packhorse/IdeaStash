@@ -11,18 +11,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Walkthrough Page View Controller-->
+        <!--WalkthroughContent-->
         <scene sceneID="VMk-ma-LWE">
             <objects>
-                <pageViewController storyboardIdentifier="WalkthroughPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="XPi-Up-Lcy" customClass="WalkthroughPageViewController" customModule="IdeaStash" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="WalkthroughContent" autoresizesArchivedViewToFullSize="NO" title="WalkthroughContent" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="XPi-Up-Lcy" customClass="WalkthroughPageViewController" customModule="IdeaStash" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wai-td-XdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-52" y="196"/>
         </scene>
-        <!--Walkthrough Content View Controller-->
+        <!--WalkthroughContent-->
         <scene sceneID="2Al-mq-FOC">
             <objects>
-                <viewController storyboardIdentifier="WalkthroughContentViewController" id="Uhp-UR-CPj" customClass="WalkthroughContentViewController" customModule="IdeaStash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkthroughContentViewController" title="WalkthroughContent" id="Uhp-UR-CPj" customClass="WalkthroughContentViewController" customModule="IdeaStash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UIn-we-ogv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="451"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

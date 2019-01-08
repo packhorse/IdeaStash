@@ -29,6 +29,8 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
         delegate = self
         if let startingViewController = contentViewController(at: 0) {
             setViewControllers([startingViewController], direction: .forward, animated: true, completion: nil)
+            
+            disableSwipeGesture()
         }
     }
     
@@ -83,4 +85,23 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
         }
     }
 
+}
+
+
+extension WalkthroughPageViewController {
+    func enableSwipeGesture() {
+        for view in self.view.subviews {
+            if let subView = view as? UIScrollView {
+                subView.isScrollEnabled = true
+            }
+        }
+    }
+    
+    func disableSwipeGesture() {
+        for view in self.view.subviews {
+            if let subView = view as? UIScrollView {
+                subView.isScrollEnabled = false
+            }
+        }
+    }
 }

@@ -40,6 +40,7 @@ class ListingsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         if UserDefaults.standard.bool(forKey: "hasViewedWalkthrough") {
+           print("break")
             return
         }
         
@@ -47,8 +48,11 @@ class ListingsViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
         //broken bit
-        if let walkthroughViewController = storyboard.instantiateViewController(withIdentifier: "WalkthroughViewController") as? WalkthroughContentViewController {
+        if let walkthroughViewController = storyboard.instantiateInitialViewController() as? WalkthroughViewController {
+            print("Walkthrough View Controller Created. 😭😭")
             present(walkthroughViewController, animated: true, completion: nil)
+        }else{
+            print("Walkthrough View Controller Failed To Create  🤬🤬")
         }
     }
     
