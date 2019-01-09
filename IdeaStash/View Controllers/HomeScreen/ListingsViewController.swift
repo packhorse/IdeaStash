@@ -48,12 +48,12 @@ class ListingsViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
         //broken bit
-        if let walkthroughViewController = storyboard.instantiateInitialViewController() as? WalkthroughViewController {
-            print("Walkthrough View Controller Created. 😭😭")
-            present(walkthroughViewController, animated: true, completion: nil)
-        }else{
-            print("Walkthrough View Controller Failed To Create  🤬🤬")
-        }
+//        if let walkthroughViewController = storyboard.instantiateInitialViewController() as? WalkthroughViewController {
+//            print("Walkthrough View Controller Created. 😭😭")
+//            present(walkthroughViewController, animated: true, completion: nil)
+//        }else{
+//            print("Walkthrough View Controller Failed To Create  🤬🤬")
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

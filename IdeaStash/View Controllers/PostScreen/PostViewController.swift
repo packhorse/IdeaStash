@@ -192,10 +192,10 @@ class PostViewController: UIViewController {
             turnOffButtonColor(sender)
         } else {
             
-            if selectedIdeaCriterias.count == 3 {
-                turnOffButtonColor(selectedIdeaCriteriaButton[2])
-                selectedIdeaCriterias.remove(at: 2)
-                selectedIdeaCriteriaButton.remove(at: 2)
+            if selectedIdeaCriterias.count == 5 {
+                turnOffButtonColor(selectedIdeaCriteriaButton[4])
+                selectedIdeaCriterias.remove(at: 4)
+                selectedIdeaCriteriaButton.remove(at: 4)
             }
             selectedIdeaCriterias.append(unwrappedCriteria)
             selectedIdeaCriteriaButton.append(sender)
@@ -251,7 +251,7 @@ class PostViewController: UIViewController {
         let ideaType = selectedIdeaType,
         let ideaPrice = selectedIdeaPrice,
 //        let ideaLocalOrUniversal = selectedLocalOrUniversal,
-            selectedIdeaCriterias.count == 3
+            selectedIdeaCriterias.count == 5
             else { print("Missing Info") ;return }
         
         let zipCode = "84604"
