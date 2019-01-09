@@ -63,13 +63,14 @@
                     <size key="freeformSize" width="375" height="451"/>
                     <connections>
                         <outlet property="contentImageView" destination="GY0-kY-he4" id="rJ7-Oc-WKQ"/>
+                        <outlet property="contentViewView" destination="UIn-we-ogv" id="f1a-iw-gzG"/>
                         <outlet property="headingLabel" destination="rFN-Kn-jd8" id="kJI-xa-yrh"/>
                         <outlet property="subHeadingLabel" destination="TVQ-DL-lGQ" id="ZJ1-jD-u5g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXg-IB-SVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="189"/>
+            <point key="canvasLocation" x="836" y="197"/>
         </scene>
         <!--Walkthrough View Controller-->
         <scene sceneID="Aza-pn-ger">
@@ -89,7 +90,7 @@
                                 <rect key="frame" x="0.0" y="451.5" width="375" height="215.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LzF-nZ-eOG">
-                                        <rect key="frame" x="92.5" y="29" width="190" height="157"/>
+                                        <rect key="frame" x="92.5" y="54" width="190" height="107"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="OwT-4G-M1M">
                                                 <rect key="frame" x="75.5" y="0.0" width="39" height="37"/>
@@ -110,12 +111,6 @@
                                                 <connections>
                                                     <action selector="nextButtonTappedWithSender:" destination="eQ0-3s-CS8" eventType="touchUpInside" id="E3F-y6-wo2"/>
                                                 </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhS-Zl-LI5">
-                                                <rect key="frame" x="80" y="127" width="30" height="30"/>
-                                                <state key="normal" title="Skip">
-                                                    <color key="titleColor" red="0.3110801393" green="0.31416014060000003" blue="0.31416014060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -143,7 +138,6 @@
                     <connections>
                         <outlet property="nextButton" destination="0bn-Ih-ptI" id="R0h-3g-IHw"/>
                         <outlet property="pageControl" destination="OwT-4G-M1M" id="Wcc-cX-wpa"/>
-                        <outlet property="skipButton" destination="OhS-Zl-LI5" id="vK3-Mm-McY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oPI-FR-jRe" userLabel="First Responder" sceneMemberID="firstResponder"/>

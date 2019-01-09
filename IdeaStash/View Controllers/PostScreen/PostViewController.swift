@@ -48,7 +48,23 @@ class PostViewController: UIViewController {
     @IBOutlet weak var criteriaButton7: UIButton!
     @IBOutlet weak var criteriaButton8: UIButton!
     @IBOutlet weak var criteriaButton9: UIButton!
+    @IBOutlet weak var criteriaButton10: UIButton!
+    @IBOutlet weak var criteriaButton11: UIButton!
+    @IBOutlet weak var criteriaButton12: UIButton!
+    @IBOutlet weak var criteriaButton13: UIButton!
+    @IBOutlet weak var criteriaButton14: UIButton!
+    @IBOutlet weak var criteriaButton15: UIButton!
+    @IBOutlet weak var criteriaButton16: UIButton!
+    @IBOutlet weak var criteriaButton17: UIButton!
+    @IBOutlet weak var criteriaButton18: UIButton!
+    @IBOutlet weak var criteriaButton19: UIButton!
+    @IBOutlet weak var criteriaButton20: UIButton!
+    @IBOutlet weak var criteriaButton21: UIButton!
+    @IBOutlet weak var criteriaButton22: UIButton!
+    @IBOutlet weak var criteriaButton23: UIButton!
+    @IBOutlet weak var criteriaButton24: UIButton!
     
+
     
     @IBOutlet weak var priceButton1: UIButton!
     @IBOutlet weak var priceButton2: UIButton!
@@ -116,24 +132,54 @@ class PostViewController: UIViewController {
         var ideaCriteria: IdeaCriteria?
         
         switch sender.restorationIdentifier {
-        case "adventurousPost":
+        case "Adventurous":
             ideaCriteria = IdeaCriteria.adventurous
-        case "thrillfulPost" :
-            ideaCriteria = IdeaCriteria.thrillful
-        case "foodPost" :
-            ideaCriteria = IdeaCriteria.hungry
-        case "indoorsPost" :
-            ideaCriteria = IdeaCriteria.indoors
-        case "outdoorsPost" :
+        case "Outdoors" :
             ideaCriteria = IdeaCriteria.outdoors
-        case "uniquePost" :
-            ideaCriteria = IdeaCriteria.unique
-        case "scaryPost" :
-            ideaCriteria = IdeaCriteria.scary
-        case "secretPost" :
-            ideaCriteria = IdeaCriteria.secret
-        case "romanticPost" :
+        case "Indoors" :
+            ideaCriteria = IdeaCriteria.indoors
+        case "Exercise" :
+            ideaCriteria = IdeaCriteria.exercise
+        case "Active" :
+            ideaCriteria = IdeaCriteria.active
+        case "Romantic" :
             ideaCriteria = IdeaCriteria.romantic
+        case "Competitive" :
+            ideaCriteria = IdeaCriteria.competitive
+        case "Exhilarating" :
+            ideaCriteria = IdeaCriteria.exhilarating
+        case "Scary" :
+            ideaCriteria = IdeaCriteria.scary
+        case "Thrilling" :
+            ideaCriteria = IdeaCriteria.thrilling
+        case "Social" :
+            ideaCriteria = IdeaCriteria.social
+        case "Food" :
+            ideaCriteria = IdeaCriteria.food
+        case "Fun" :
+            ideaCriteria = IdeaCriteria.fun
+        case "Funny" :
+            ideaCriteria = IdeaCriteria.funny
+        case "Secret" :
+            ideaCriteria = IdeaCriteria.secret
+        case "Learning" :
+            ideaCriteria = IdeaCriteria.learning
+        case "Creative" :
+            ideaCriteria = IdeaCriteria.creative
+        case "Cleaning" :
+            ideaCriteria = IdeaCriteria.cleaning
+        case "Task" :
+            ideaCriteria = IdeaCriteria.task
+        case "Lazy" :
+            ideaCriteria = IdeaCriteria.lazy
+        case "Satisfying" :
+            ideaCriteria = IdeaCriteria.satisfying
+        case "Relaxing" :
+            ideaCriteria = IdeaCriteria.relaxing
+        case "Quiet" :
+            ideaCriteria = IdeaCriteria.quiet
+        case "Different" :
+            ideaCriteria = IdeaCriteria.different
         default: print("something went wront with sorting through your idea criteria")
             
         }
@@ -354,6 +400,81 @@ class PostViewController: UIViewController {
         criteriaButton9.layer.borderWidth = 1.0
         criteriaButton9.layer.borderColor = UIColor.lightGray.cgColor
         criteriaButton9.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton10.layer.cornerRadius = 18.0
+        criteriaButton10.layer.borderWidth = 1.0
+        criteriaButton10.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton10.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton11.layer.cornerRadius = 18.0
+        criteriaButton11.layer.borderWidth = 1.0
+        criteriaButton11.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton11.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton12.layer.cornerRadius = 18.0
+        criteriaButton12.layer.borderWidth = 1.0
+        criteriaButton12.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton12.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton13.layer.cornerRadius = 18.0
+        criteriaButton13.layer.borderWidth = 1.0
+        criteriaButton13.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton13.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton14.layer.cornerRadius = 18.0
+        criteriaButton14.layer.borderWidth = 1.0
+        criteriaButton14.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton14.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton15.layer.cornerRadius = 18.0
+        criteriaButton15.layer.borderWidth = 1.0
+        criteriaButton15.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton15.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton16.layer.cornerRadius = 18.0
+        criteriaButton16.layer.borderWidth = 1.0
+        criteriaButton16.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton16.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton17.layer.cornerRadius = 18.0
+        criteriaButton17.layer.borderWidth = 1.0
+        criteriaButton17.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton17.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton18.layer.cornerRadius = 18.0
+        criteriaButton18.layer.borderWidth = 1.0
+        criteriaButton18.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton18.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton19.layer.cornerRadius = 18.0
+        criteriaButton19.layer.borderWidth = 1.0
+        criteriaButton19.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton19.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton20.layer.cornerRadius = 18.0
+        criteriaButton20.layer.borderWidth = 1.0
+        criteriaButton20.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton20.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton21.layer.cornerRadius = 18.0
+        criteriaButton21.layer.borderWidth = 1.0
+        criteriaButton21.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton21.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton22.layer.cornerRadius = 18.0
+        criteriaButton22.layer.borderWidth = 1.0
+        criteriaButton22.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton22.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton23.layer.cornerRadius = 18.0
+        criteriaButton23.layer.borderWidth = 1.0
+        criteriaButton23.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton23.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        criteriaButton24.layer.cornerRadius = 18.0
+        criteriaButton24.layer.borderWidth = 1.0
+        criteriaButton24.layer.borderColor = UIColor.lightGray.cgColor
+        criteriaButton24.titleLabel?.adjustsFontSizeToFitWidth = true
         
         
         priceButton1.layer.cornerRadius = 18.0

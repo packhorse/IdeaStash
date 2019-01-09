@@ -24,7 +24,10 @@ class WalkthroughContentViewController: UIViewController {
     }
 
     @IBOutlet var contentImageView: UIImageView!
-        
+    
+    @IBOutlet var contentViewView: UIView!
+    
+    
         var index = 0
         var heading = ""
         var subHeading = ""
@@ -37,7 +40,6 @@ class WalkthroughContentViewController: UIViewController {
         headingLabel.text = heading
         subHeadingLabel.text = subHeading
         contentImageView.image = UIImage(named: "" )
+        
     }
-    
-
 }

@@ -19,7 +19,6 @@ class WalkthroughViewController: UIViewController, WalkthroughPageViewController
         }
     }
     
-    @IBOutlet var skipButton: UIButton!
     
     
     var walkthroughPageViewController: WalkthroughPageViewController?
@@ -47,11 +46,10 @@ class WalkthroughViewController: UIViewController, WalkthroughPageViewController
             switch index {
             case 0...1:
                 nextButton.setTitle("Next", for: .normal)
-                skipButton.isHidden = false
+               
                 
             case 2:
                 nextButton.setTitle("Get Started", for: .normal)
-                skipButton.isHidden = true
                 
                 default: break
             }
@@ -65,6 +63,7 @@ class WalkthroughViewController: UIViewController, WalkthroughPageViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
     }
     

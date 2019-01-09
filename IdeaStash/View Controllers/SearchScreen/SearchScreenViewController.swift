@@ -31,6 +31,24 @@ class SearchScreenViewController: UIViewController {
     @IBOutlet weak var criteriaButton7: UIButton!
     @IBOutlet weak var criteriaButton8: UIButton!
     @IBOutlet weak var criteriaButton9: UIButton!
+    @IBOutlet weak var criteriaButton10: UIButton!
+    @IBOutlet weak var criteriaButton11: UIButton!
+    @IBOutlet weak var criteriaButton12: UIButton!
+    @IBOutlet weak var criteriaButton13: UIButton!
+    @IBOutlet weak var criteriaButton14: UIButton!
+    @IBOutlet weak var criteriaButton15: UIButton!
+    
+    @IBOutlet weak var criteriaButton16: UIButton!
+    @IBOutlet weak var criteriaButton17: UIButton!
+    @IBOutlet weak var criteriaButton18: UIButton!
+    @IBOutlet weak var criteriaButton19: UIButton!
+    @IBOutlet weak var criteriaButton20: UIButton!
+    @IBOutlet weak var criteriaButton21: UIButton!
+    @IBOutlet weak var criteriaButton22: UIButton!
+    @IBOutlet weak var criteriaButton23: UIButton!
+    @IBOutlet weak var criteriaButton24: UIButton!
+    
+
     
     //Buttons for price range
     @IBOutlet weak var priceRangeButton1: UIButton!
@@ -99,24 +117,54 @@ class SearchScreenViewController: UIViewController {
         var ideaCriteria: IdeaCriteria?
         
         switch sender.restorationIdentifier {
-        case "adventurousSearch":
+        case "adventurous":
             ideaCriteria = IdeaCriteria.adventurous
-        case "thrillfulSearch" :
-            ideaCriteria = IdeaCriteria.thrillful
-        case "foodSearch" :
-            ideaCriteria = IdeaCriteria.hungry
-        case "indoorsSearch" :
+        case "outdoors" :
+            ideaCriteria = IdeaCriteria.thrilling
+        case "indoors" :
+            ideaCriteria = IdeaCriteria.food
+        case "exercise" :
             ideaCriteria = IdeaCriteria.indoors
-        case "outdoorsSearch" :
+        case "active" :
             ideaCriteria = IdeaCriteria.outdoors
-        case "uniqueSearch" :
-            ideaCriteria = IdeaCriteria.unique
-        case "scarySearch" :
+        case "romantic" :
+            ideaCriteria = IdeaCriteria.different
+        case "competitive" :
             ideaCriteria = IdeaCriteria.scary
-        case "secretSearch" :
+        case "exhilarating" :
             ideaCriteria = IdeaCriteria.secret
-        case "romanticSearch" :
+        case "scary" :
             ideaCriteria = IdeaCriteria.romantic
+        case "thrilling" :
+            ideaCriteria = IdeaCriteria.thrilling
+        case "social" :
+            ideaCriteria = IdeaCriteria.social
+        case "food" :
+            ideaCriteria = IdeaCriteria.food
+        case "fun" :
+            ideaCriteria = IdeaCriteria.fun
+        case "funny" :
+            ideaCriteria = IdeaCriteria.funny
+        case "secret" :
+            ideaCriteria = IdeaCriteria.secret
+        case "learning" :
+            ideaCriteria = IdeaCriteria.learning
+        case "creative" :
+            ideaCriteria = IdeaCriteria.creative
+        case "cleaning" :
+            ideaCriteria = IdeaCriteria.cleaning
+        case "task" :
+            ideaCriteria = IdeaCriteria.task
+        case "lazy" :
+            ideaCriteria = IdeaCriteria.lazy
+        case "satisfying" :
+            ideaCriteria = IdeaCriteria.satisfying
+        case "relaxing" :
+            ideaCriteria = IdeaCriteria.relaxing
+        case "quiet" :
+            ideaCriteria = IdeaCriteria.quiet
+        case "different" :
+            ideaCriteria = IdeaCriteria.different
         default: print("something went wront with sorting through your idea criteria")
             
         }
@@ -280,22 +328,52 @@ class SearchScreenViewController: UIViewController {
             switch criteria {
             case .adventurous:
                 selectedCriteriaButtons.append(criteriaButton1)
-            case .thrillful:
-                selectedCriteriaButtons.append(criteriaButton2)
-            case .hungry:
-                selectedCriteriaButtons.append(criteriaButton3)
-            case .indoors:
-                selectedCriteriaButtons.append(criteriaButton4)
             case .outdoors:
+                selectedCriteriaButtons.append(criteriaButton2)
+            case .indoors:
+                selectedCriteriaButtons.append(criteriaButton3)
+            case .exercise:
+                selectedCriteriaButtons.append(criteriaButton4)
+            case .active:
                 selectedCriteriaButtons.append(criteriaButton5)
-            case .unique:
-                selectedCriteriaButtons.append(criteriaButton6)
-            case .scary:
-                selectedCriteriaButtons.append(criteriaButton7)
-            case .secret:
-                selectedCriteriaButtons.append(criteriaButton8)
             case .romantic:
+                selectedCriteriaButtons.append(criteriaButton6)
+            case .competitive:
+                selectedCriteriaButtons.append(criteriaButton7)
+            case .exhilarating:
+                selectedCriteriaButtons.append(criteriaButton8)
+            case .scary:
                 selectedCriteriaButtons.append(criteriaButton9)
+            case .thrilling:
+                selectedCriteriaButtons.append(criteriaButton10)
+            case .social:
+                selectedCriteriaButtons.append(criteriaButton11)
+            case .food:
+                selectedCriteriaButtons.append(criteriaButton12)
+            case .fun:
+                selectedCriteriaButtons.append(criteriaButton13)
+            case .funny:
+                selectedCriteriaButtons.append(criteriaButton14)
+            case .secret:
+                selectedCriteriaButtons.append(criteriaButton15)
+            case .learning:
+                selectedCriteriaButtons.append(criteriaButton16)
+            case .creative:
+                selectedCriteriaButtons.append(criteriaButton17)
+            case .cleaning:
+                selectedCriteriaButtons.append(criteriaButton18)
+            case .task:
+                selectedCriteriaButtons.append(criteriaButton19)
+            case .lazy:
+                selectedCriteriaButtons.append(criteriaButton20)
+            case .satisfying:
+                selectedCriteriaButtons.append(criteriaButton21)
+            case .relaxing:
+                selectedCriteriaButtons.append(criteriaButton22)
+            case .quiet:
+                selectedCriteriaButtons.append(criteriaButton23)
+            case .different:
+                selectedCriteriaButtons.append(criteriaButton24)
             }
         }
         
@@ -347,6 +425,22 @@ class SearchScreenViewController: UIViewController {
         setupUIFor(criteriaButton7)
         setupUIFor(criteriaButton8)
         setupUIFor(criteriaButton9)
+        setupUIFor(criteriaButton10)
+        setupUIFor(criteriaButton11)
+        setupUIFor(criteriaButton12)
+        setupUIFor(criteriaButton13)
+        setupUIFor(criteriaButton14)
+        setupUIFor(criteriaButton15)
+        setupUIFor(criteriaButton16)
+        setupUIFor(criteriaButton17)
+        setupUIFor(criteriaButton18)
+        setupUIFor(criteriaButton19)
+        setupUIFor(criteriaButton20)
+        setupUIFor(criteriaButton21)
+        setupUIFor(criteriaButton22)
+        setupUIFor(criteriaButton23)
+        setupUIFor(criteriaButton24)
+
         
         
         setupUIFor(priceRangeButton1)

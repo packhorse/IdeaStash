@@ -134,7 +134,7 @@ class ListingDetailViewController: UIViewController {
             switch criteria {
             case .adventurous :
                 criteriaOrQualities.append("Adventurous")
-            case .hungry :
+            case .food :
                 criteriaOrQualities.append("Hungry")
             case .indoors :
                 criteriaOrQualities.append("Indoors")
@@ -146,10 +146,40 @@ class ListingDetailViewController: UIViewController {
                 criteriaOrQualities.append("Scary")
             case .secret :
                 criteriaOrQualities.append("Secret")
-            case .thrillful :
+            case .thrilling :
                 criteriaOrQualities.append("Thrillful")
-            case .unique :
+            case .different :
                 criteriaOrQualities.append("Unique")
+            case .active :
+                criteriaOrQualities.append("Active")
+            case .cleaning :
+                criteriaOrQualities.append("Cleaning")
+            case .competitive :
+                criteriaOrQualities.append("Competitive")
+            case .creative :
+                criteriaOrQualities.append("Creative")
+            case .exercise :
+                criteriaOrQualities.append("Exercise")
+            case .exhilarating :
+                criteriaOrQualities.append("Exhilarating")
+            case .fun :
+                criteriaOrQualities.append("Fun")
+            case .funny :
+                criteriaOrQualities.append("Funny")
+            case .lazy :
+                criteriaOrQualities.append("Lazy")
+            case .learning :
+                criteriaOrQualities.append("Learning")
+            case .quiet :
+                criteriaOrQualities.append("Quiet")
+            case .relaxing :
+                criteriaOrQualities.append("Relaxing")
+            case .satisfying :
+                criteriaOrQualities.append("Satisfying")
+            case .social :
+                criteriaOrQualities.append("Social")
+            case .task :
+                criteriaOrQualities.append("Task")
             }
         }
         return criteriaOrQualities.joined(separator: ", ")

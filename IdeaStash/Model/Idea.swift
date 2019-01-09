@@ -99,14 +99,29 @@ enum IdeaType: String {
 enum IdeaCriteria: String {
     
     case adventurous
-    case thrillful
-    case hungry
+    case thrilling
+    case food
     case indoors
     case outdoors
-    case unique
+    case different
     case scary
     case secret
     case romantic
+    case exercise
+    case active
+    case competitive
+    case exhilarating
+    case social
+    case fun
+    case quiet
+    case relaxing
+    case learning
+    case creative
+    case cleaning
+    case task
+    case lazy
+    case satisfying
+    case funny
     
 }
 

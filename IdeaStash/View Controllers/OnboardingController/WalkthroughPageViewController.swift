@@ -12,12 +12,12 @@ protocol WalkthroughPageViewControllerDelegate: class {
     func didUpdatePageIndex(currentIndex: Int)
 }
 
-class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerDelegate {
     
     weak var walkthroughDelegate: WalkthroughPageViewControllerDelegate?
     
     var pageHeadings = ["Post Your Best Ideas For Other People To Find", "Discover Other People's Ideas", "Filter Through Those Ideas To Find Something Perfect For You."]
-    var pageImages = ["onboarding image 1", "onboarding image 2 ", "onbaording image 3"] //images here
+    var pageImages = ["onboarding1", "onboarding2 ", "onbaording3"]
     var pageSubHeadings = ["Pin your favorite cafes and create your own guide", "Search and locate your favorite cafes on maps", "Find cafes shared by your friends"]
     
     var currentIndex = 0
@@ -25,29 +25,14 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      dataSource = self
+    
         delegate = self
         if let startingViewController = contentViewController(at: 0) {
             setViewControllers([startingViewController], direction: .forward, animated: true, completion: nil)
             
-            disableSwipeGesture()
         }
     }
     
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as! WalkthroughContentViewController).index
-        index -= 1
-        
-        return contentViewController(at: index)
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as! WalkthroughContentViewController).index
-        index += 1
-        
-        return contentViewController(at: index)
-    }
     
     func contentViewController(at index: Int) -> WalkthroughContentViewController? {
         if index < 0 || index >= pageHeadings.count {
@@ -88,20 +73,3 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
 }
 
 
-extension WalkthroughPageViewController {
-    func enableSwipeGesture() {
-        for view in self.view.subviews {
-            if let subView = view as? UIScrollView {
-                subView.isScrollEnabled = true
-            }
-        }
-    }
-    
-    func disableSwipeGesture() {
-        for view in self.view.subviews {
-            if let subView = view as? UIScrollView {
-                subView.isScrollEnabled = false
-            }
-        }
-    }
-}
