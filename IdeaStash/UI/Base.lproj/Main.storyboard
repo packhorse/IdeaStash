@@ -330,13 +330,13 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What words describe what you are feeling/need?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fZA-Hv-45w">
-                                                <rect key="frame" x="16" y="177.33333333333334" width="288" height="23.333333333333343"/>
+                                                <rect key="frame" x="16" y="177.33333333333334" width="288" height="27.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="DiE-pe-4l7">
-                                                <rect key="frame" x="15" y="669.66666666666663" width="290" height="83.333333333333371"/>
+                                                <rect key="frame" x="15" y="657.66666666666663" width="290" height="83.333333333333371"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your price range?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0UA-Pc-tkg">
                                                         <rect key="frame" x="0.0" y="0.0" width="290" height="23.333333333333332"/>
@@ -409,7 +409,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2m-7w-qyO">
-                                                <rect key="frame" x="15" y="788.66666666666663" width="290" height="42"/>
+                                                <rect key="frame" x="15" y="776.66666666666663" width="290" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="Od2-6g-uyd"/>
                                                 </constraints>
@@ -421,8 +421,8 @@
                                                     <action selector="applyFiltersButtonTapped:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="L1D-nU-TqL"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="X9m-Vj-5gd">
-                                                <rect key="frame" x="8" y="225" width="304" height="410"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="X9m-Vj-5gd">
+                                                <rect key="frame" x="8" y="233" width="304" height="390"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="BNd-OM-PQq">
                                                         <rect key="frame" x="0.0" y="0.0" width="304" height="228"/>
@@ -683,7 +683,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="D2h-gh-AJQ">
-                                                        <rect key="frame" x="0.0" y="278" width="304" height="132"/>
+                                                        <rect key="frame" x="0.0" y="258" width="304" height="132"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="pto-2j-Q0M">
                                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="36"/>
@@ -849,9 +849,9 @@
                                             <constraint firstItem="S2m-7w-qyO" firstAttribute="leading" secondItem="n5X-DD-HtG" secondAttribute="leading" constant="15" id="XoA-KX-nxJ"/>
                                             <constraint firstItem="3cR-4O-DKr" firstAttribute="leading" secondItem="n5X-DD-HtG" secondAttribute="leading" constant="15" id="XsH-Vo-IWd"/>
                                             <constraint firstItem="DiE-pe-4l7" firstAttribute="leading" secondItem="n5X-DD-HtG" secondAttribute="leading" constant="15" id="ZbC-tY-PXA"/>
-                                            <constraint firstItem="X9m-Vj-5gd" firstAttribute="top" secondItem="fZA-Hv-45w" secondAttribute="bottom" constant="24.333333333333343" id="bG8-eZ-tXB"/>
+                                            <constraint firstItem="X9m-Vj-5gd" firstAttribute="top" secondItem="fZA-Hv-45w" secondAttribute="bottom" constant="28.333333969116211" id="bG8-eZ-tXB"/>
                                             <constraint firstItem="6sN-AX-Dr8" firstAttribute="top" secondItem="n5X-DD-HtG" secondAttribute="top" constant="24" id="bRd-gz-5qc"/>
-                                            <constraint firstItem="X9m-Vj-5gd" firstAttribute="top" secondItem="n5X-DD-HtG" secondAttribute="top" constant="225" id="dRC-Sw-lxi"/>
+                                            <constraint firstItem="X9m-Vj-5gd" firstAttribute="top" secondItem="n5X-DD-HtG" secondAttribute="top" constant="233" id="dRC-Sw-lxi"/>
                                             <constraint firstAttribute="trailing" secondItem="3cR-4O-DKr" secondAttribute="trailing" constant="15" id="io0-T6-jJJ"/>
                                             <constraint firstAttribute="trailing" secondItem="S2m-7w-qyO" secondAttribute="trailing" constant="15" id="jtU-ga-Ycg"/>
                                             <constraint firstItem="6sN-AX-Dr8" firstAttribute="leading" secondItem="3cR-4O-DKr" secondAttribute="leading" id="lOw-KA-rUM"/>
@@ -1512,7 +1512,7 @@
                                             <constraint firstItem="3bz-5E-eNX" firstAttribute="top" secondItem="7r3-zo-6K1" secondAttribute="bottom" constant="81.670000000000002" id="xPd-m0-J11"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which 3 words best describe your idea?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nRa-3R-Fu5">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which 5 words best describe your idea?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nRa-3R-Fu5">
                                         <rect key="frame" x="21" y="571" width="299" height="23.333333333333371"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <nil key="textColor"/>

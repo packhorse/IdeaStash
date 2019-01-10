@@ -224,22 +224,19 @@ class PostViewController: UIViewController {
             
         }
         
-        self.selectedIdeaPrice = ideaPrice
         
-        if ideaPrice != IdeaController.shared.ideaPriceFilter {
+        if ideaPrice != selectedIdeaPrice {
             
             turnOnButtonColor(sender)
             turnOffButtonColor(selectedIdeaPriceButton)
             selectedIdeaPriceButton = sender
-            IdeaController.shared.ideaPriceFilter = ideaPrice
+            self.selectedIdeaPrice = ideaPrice
             
         } else {
             
             turnOffButtonColor(sender)
-            IdeaController.shared.ideaPriceFilter = nil
-            
             selectedIdeaPriceButton = nil
-            
+            selectedIdeaPrice = nil
         }
     }
     

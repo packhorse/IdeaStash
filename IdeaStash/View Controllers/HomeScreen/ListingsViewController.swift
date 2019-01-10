@@ -67,6 +67,7 @@ class ListingsViewController: UIViewController {
     @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
         
                 IdeaController.shared.fetchAllIdeas { (_) in }
+                collectionView.reloadData()
     }
     
     @objc func updateViews() {
