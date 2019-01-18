@@ -272,7 +272,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3cR-4O-DKr">
-                                                <rect key="frame" x="15" y="63.333333333333329" width="290" height="87.999999999999986"/>
+                                                <rect key="frame" x="15" y="63.333333333333343" width="290" height="88"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="T9E-rg-Toa">
                                                         <rect key="frame" x="0.0" y="0.0" width="290" height="36"/>
@@ -308,7 +308,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fsI-8J-8cZ">
-                                                        <rect key="frame" x="0.0" y="52.000000000000014" width="290" height="36"/>
+                                                        <rect key="frame" x="0.0" y="52" width="290" height="36"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="friendsOrDateSearch" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsG-eP-U1t">
                                                                 <rect key="frame" x="0.0" y="0.0" width="290" height="36"/>
@@ -330,13 +330,13 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What words describe what you are feeling/need?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fZA-Hv-45w">
-                                                <rect key="frame" x="16" y="177.33333333333334" width="288" height="27.333333333333343"/>
+                                                <rect key="frame" x="16" y="177.33333333333331" width="288" height="27.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="DiE-pe-4l7">
-                                                <rect key="frame" x="15" y="657.66666666666663" width="290" height="83.333333333333371"/>
+                                                <rect key="frame" x="15" y="639.66666666666663" width="290" height="83.333333333333371"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your price range?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0UA-Pc-tkg">
                                                         <rect key="frame" x="0.0" y="0.0" width="290" height="23.333333333333332"/>
@@ -409,7 +409,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2m-7w-qyO">
-                                                <rect key="frame" x="15" y="776.66666666666663" width="290" height="42"/>
+                                                <rect key="frame" x="15" y="758.66666666666663" width="290" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="Od2-6g-uyd"/>
                                                 </constraints>
@@ -421,8 +421,8 @@
                                                     <action selector="applyFiltersButtonTapped:" destination="Hn4-7V-Ku1" eventType="touchUpInside" id="L1D-nU-TqL"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="X9m-Vj-5gd">
-                                                <rect key="frame" x="8" y="233" width="304" height="390"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="X9m-Vj-5gd">
+                                                <rect key="frame" x="8" y="233" width="304" height="372"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="BNd-OM-PQq">
                                                         <rect key="frame" x="0.0" y="0.0" width="304" height="228"/>
@@ -683,7 +683,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="D2h-gh-AJQ">
-                                                        <rect key="frame" x="0.0" y="258" width="304" height="132"/>
+                                                        <rect key="frame" x="0.0" y="240" width="304" height="132"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="pto-2j-Q0M">
                                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="36"/>
@@ -837,7 +837,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="fZA-Hv-45w" firstAttribute="top" secondItem="3cR-4O-DKr" secondAttribute="bottom" constant="26" id="3fO-L0-nnh"/>
-                                            <constraint firstAttribute="bottom" secondItem="X9m-Vj-5gd" secondAttribute="bottom" constant="237" id="5Mt-fD-hs8"/>
+                                            <constraint firstAttribute="bottom" secondItem="X9m-Vj-5gd" secondAttribute="bottom" constant="267" id="5Mt-fD-hs8"/>
                                             <constraint firstItem="X9m-Vj-5gd" firstAttribute="trailing" secondItem="DiE-pe-4l7" secondAttribute="trailing" constant="7" id="5bb-qb-8Jg"/>
                                             <constraint firstAttribute="trailing" secondItem="fZA-Hv-45w" secondAttribute="trailing" constant="16" id="6OJ-a3-Vl1"/>
                                             <constraint firstAttribute="trailing" secondItem="DiE-pe-4l7" secondAttribute="trailing" constant="15" id="7j7-9t-Dh0"/>
@@ -859,7 +859,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="n5X-DD-HtG" firstAttribute="top" secondItem="bRZ-xM-TZT" secondAttribute="top" constant="20" symbolic="YES" id="37V-1d-09y"/>
+                                    <constraint firstItem="n5X-DD-HtG" firstAttribute="top" secondItem="bRZ-xM-TZT" secondAttribute="top" constant="88" id="37V-1d-09y"/>
                                     <constraint firstItem="n5X-DD-HtG" firstAttribute="leading" secondItem="bRZ-xM-TZT" secondAttribute="leading" id="F1N-Fv-rFb"/>
                                     <constraint firstAttribute="bottom" secondItem="n5X-DD-HtG" secondAttribute="bottom" constant="140" id="TTb-eJ-xJk"/>
                                     <constraint firstItem="n5X-DD-HtG" firstAttribute="width" secondItem="bRZ-xM-TZT" secondAttribute="width" id="kgt-30-I4V"/>
@@ -905,9 +905,9 @@
                         <outlet property="criteriaButton7" destination="Dqt-qI-Hhl" id="bsv-ls-un9"/>
                         <outlet property="criteriaButton8" destination="a7c-aa-f6R" id="bbR-N3-zX2"/>
                         <outlet property="criteriaButton9" destination="Vee-IS-Pap" id="7t2-Ry-cjo"/>
-                        <outlet property="ideaTypeButton1" destination="BsG-eP-U1t" id="l96-J8-b0y"/>
+                        <outlet property="ideaTypeButton1" destination="OFC-g7-rGP" id="9Bj-si-hMN"/>
                         <outlet property="ideaTypeButton2" destination="tV5-cY-Y11" id="KHa-fv-Qaj"/>
-                        <outlet property="ideaTypeButton3" destination="OFC-g7-rGP" id="Wb7-rd-9dz"/>
+                        <outlet property="ideaTypeButton3" destination="BsG-eP-U1t" id="9ct-tD-ngG"/>
                         <outlet property="priceRangeButton1" destination="DTh-ux-VaV" id="rJe-fJ-ZJC"/>
                         <outlet property="priceRangeButton2" destination="jDO-LC-uby" id="guJ-L1-DWc"/>
                         <outlet property="priceRangeButton3" destination="sBM-Th-wIN" id="oiL-9v-qzG"/>

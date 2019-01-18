@@ -108,7 +108,6 @@ class SearchScreenViewController: UIViewController {
             turnOffButtonColor(sender)
             turnOffColorTheme()
         }
-        
     }
     
     
@@ -214,7 +213,6 @@ class SearchScreenViewController: UIViewController {
             
             
             turnOnButtonColor(sender)
-            
             turnOffButtonColor(selectedIdeaPriceButton)
             selectedIdeaPriceButton = sender
             IdeaController.shared.ideaPriceFilter = ideaPrice
@@ -226,7 +224,6 @@ class SearchScreenViewController: UIViewController {
             
             turnOffButtonColor(sender)
             turnOffColorTheme()
-            
             
         }
     }
@@ -400,8 +397,8 @@ class SearchScreenViewController: UIViewController {
                 
             }
             
-            turnOnButtonColor(selectedPriceButton!)
             selectedIdeaPriceButton = selectedPriceButton
+            turnOnButtonColor(selectedPriceButton!)
         }
     }
     

@@ -135,7 +135,7 @@ class ListingDetailViewController: UIViewController {
             case .adventurous :
                 criteriaOrQualities.append("Adventurous")
             case .food :
-                criteriaOrQualities.append("Hungry")
+                criteriaOrQualities.append("Food")
             case .indoors :
                 criteriaOrQualities.append("Indoors")
             case .outdoors :

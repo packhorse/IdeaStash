@@ -15,7 +15,8 @@ class PostViewController: UIViewController {
     //These are the varialbes that change based on the4 selection=by the user.
     var selectedIdeaType: IdeaType?
     var selectedIdeaTypeButton: UIButton?
-    
+    var selectedIdeaCriterias: [IdeaCriteria] = []
+    var selectedIdeaCriteriaButton: [UIButton] = []
     var selectedIdeaPrice: IdeaPrice?
     var selectedIdeaPriceButton: UIButton?
     
@@ -25,9 +26,7 @@ class PostViewController: UIViewController {
     
     var vcThemeColor: UIColor? = UIColor.lightGray
     
-    var selectedIdeaCriterias: [IdeaCriteria] = []
-    var selectedIdeaCriteriaButton: [UIButton] = []
-    
+
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleTextField: UITextField!
@@ -234,9 +233,9 @@ class PostViewController: UIViewController {
             
         } else {
             
-            turnOffButtonColor(sender)
             selectedIdeaPriceButton = nil
             selectedIdeaPrice = nil
+            turnOffButtonColor(sender)
         }
     }
     
@@ -315,11 +314,7 @@ class PostViewController: UIViewController {
         postButton.setTitleColor(UIColor.white, for: .normal)
     }
     
-    
-    
-    
-    
-    
+
     fileprivate func updateUI() {
         
         // Title Text Field
